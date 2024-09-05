@@ -30,7 +30,7 @@ export const managers = [
       "name": "Chris Rawlings",
       "tookOver": 2019, // (optional) used if a manager took over a team, delete this line or change to null otherwise
       "location": "Greenville", // (optional)
-      "bio": "Captain Chris Rawlings, CPA is the league accountant and is quickly making a case for being our resident “homeschool dad.”,
+      "bio": "Captain Chris Rawlings, CPA is the league accountant and is quickly making a case for being our resident “homeschool dad"
       "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
       "fantasyStart": 2010, // (optional) when did the manager start playing fantasy football
       "favoriteTeam": "Redskins", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
