@@ -1,8 +1,8 @@
 /*   STEP 1   */
 export const leagueID = "1059513476260966400"; // your league ID
 export const leagueName = "Gvegas Gridiron"; // your league name
-export const dues = 100; // (optional) used in template constitution page
-export const dynasty = true; // true for dynasty leagues, false for redraft and keeper
+export const dues = 10; // (optional) used in template constitution page
+export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
 export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
 
 /*   STEP 2   */
@@ -25,28 +25,29 @@ https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#ii-adding
 // To omit an optional field, set it's value to null
 
 export const managers = [
-    // {
-    //   "roster": 1,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
-    //   "name": "Your Name",
-    //   "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
-    //   "location": "Brooklyn", // (optional)
-    //   "bio": "Lorem ipsum...",
-    //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
-    //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-    //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-    //   "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
-    //   "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
-    //     link: 6, // manager array number within this array, or null to link back to all managers page
-    //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
-    //   },
-    //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-    //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-    //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-    //   "philosophy": "Your fantasy team's philosophy",
-    //   "tradingScale": 10, // 1 - 10
-    //   "preferredContact": "Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
-    // },
+    {
+      "roster": 11,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
+      "name": "Chris Rawlings",
+      "tookOver": 2019, // (optional) used if a manager took over a team, delete this line or change to null otherwise
+      "location": "Greenville", // (optional)
+      "bio": "Captain Chris Rawlings, CPA is the league accountant and is quickly making a case for being our resident “homeschool dad.” His family ticks all the boxes - as white as they come, degree from Bob Jones, and he keeps having new kids every year. Although, maybe that will stop now that he finally has a son. He’s just one kid away from officially being sized out of a mini van. In spite of all he has going on elsewhere, Chris manages to run his team with the highest level of commitment - famously even flying back from a family vacation to Buffalo several years back to make it to our draft. He’s come a long way from his Waffle House trip two seasons ago and is looking to continue his upward trajectory this season.
+",
+      "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
+      "fantasyStart": 2010, // (optional) when did the manager start playing fantasy football
+      "favoriteTeam": "Redskins", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
+      "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+      "rival": {
+        name: "Rival", // Can be anything (usually your rival's name)
+        link: 6, // manager array number within this array, or null to link back to all managers page
+        image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
+      },
+      "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
+      "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
+      "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10, // 1 - 10
+      "preferredContact": "Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+    },
     // {
     //   "roster": 2,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
     //   "name": "Your Name",
