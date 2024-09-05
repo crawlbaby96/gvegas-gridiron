@@ -30,8 +30,7 @@ export const managers = [
       "name": "Chris Rawlings",
       "tookOver": 2019, // (optional) used if a manager took over a team, delete this line or change to null otherwise
       "location": "Greenville", // (optional)
-      "bio": "Captain Chris Rawlings, CPA is the league accountant and is quickly making a case for being our resident “homeschool dad.” His family ticks all the boxes - as white as they come, degree from Bob Jones, and he keeps having new kids every year. Although, maybe that will stop now that he finally has a son. He’s just one kid away from officially being sized out of a mini van. In spite of all he has going on elsewhere, Chris manages to run his team with the highest level of commitment - famously even flying back from a family vacation to Buffalo several years back to make it to our draft. He’s come a long way from his Waffle House trip two seasons ago and is looking to continue his upward trajectory this season.
-",
+      "bio": "Captain Chris Rawlings, CPA is the league accountant and is quickly making a case for being our resident “homeschool dad.”,
       "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
       "fantasyStart": 2010, // (optional) when did the manager start playing fantasy football
       "favoriteTeam": "Redskins", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
