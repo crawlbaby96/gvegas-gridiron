@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="League Page logo" src="https://storage.googleapis.com/nfl-player-data/League%20Page.png" width="100px" />
+  <img alt="League Page logo" src="https://www.vectorstock.com/royalty-free-vector/american-football-fantasy-vector-13816178" width="100px" />
 
   **[(Unofficial) Sleeper League Page Template](https://github.com/nmelhado/league-page/)**
 
