@@ -72,6 +72,11 @@ export const tabs = [
                 dest: '/constitution',
             },
             {
+                icon: 'history',
+                label: 'League History',
+                dest: '/league-history',
+            },
+            {
                 icon: 'sports_football',
                 label: 'Go to Sleeper',
                 dest: `https://sleeper.app/leagues/${leagueID}`,
