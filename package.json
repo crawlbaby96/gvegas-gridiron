@@ -45,6 +45,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:staging": "NODE_ENV=staging vite build",
+    "build:production": "NODE_ENV=production vite build",
     "build-docker": "DOCKER_BUILD=true vite build --verbose",
     "docker-build": "docker build . -t $USER/league-page:latest",
     "docker-run": "npm run docker-build && docker run -p 3000:3000 $USER/league-page:latest",
@@ -53,7 +55,9 @@
     "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
     "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "format": "prettier --write --plugin-search-dir=. .",
+    "deploy:staging": "npm run build:staging && vercel --prod",
+    "deploy:production": "npm run build:production && vercel --prod"
   },
   "type": "module",
   "dependencies": {
