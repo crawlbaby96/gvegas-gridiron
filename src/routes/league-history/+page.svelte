@@ -89,18 +89,18 @@
         text-align: center;
         margin-bottom: 40px;
         padding: 20px 0;
-        border-bottom: 2px solid #e0e0e0;
+        border-bottom: 2px solid var(--ddd);
     }
 
     .header h1 {
         font-size: 2.5rem;
         margin-bottom: 10px;
-        color: #333;
+        color: var(--g000);
     }
 
     .header p {
         font-size: 1.2rem;
-        color: #666;
+        color: var(--g555);
         max-width: 600px;
         margin: 0 auto;
     }
@@ -112,24 +112,24 @@
     }
 
     .history-section {
-        background: white;
+        background: var(--fff);
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 3px 3px -2px var(--boxShadowOne), 0px 3px 4px 0px var(--boxShadowTwo), 0px 1px 8px 0px var(--boxShadowThree);
     }
 
     .history-section h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
-        color: #333;
-        border-bottom: 2px solid #007bff;
+        color: var(--g000);
+        border-bottom: 2px solid var(--blueOne);
         padding-bottom: 10px;
     }
 
     .history-section p {
         font-size: 1.1rem;
         line-height: 1.6;
-        color: #555;
+        color: var(--g555);
         margin-bottom: 20px;
     }
 
@@ -142,7 +142,7 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: linear-gradient(135deg, #007bff, #0056b3);
+        background: linear-gradient(135deg, var(--blueOne), var(--blueTwo));
         color: white;
         padding: 15px 30px;
         border-radius: 8px;
@@ -156,7 +156,7 @@
     .spreadsheet-button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-        background: linear-gradient(135deg, #0056b3, #004085);
+        background: linear-gradient(135deg, var(--blueTwo), var(--blueOne));
     }
 
     .spreadsheet-button .material-icons {
@@ -165,7 +165,7 @@
 
     .note {
         font-size: 0.9rem;
-        color: #888;
+        color: var(--g999);
         margin-top: 10px;
         font-style: italic;
     }
@@ -180,26 +180,26 @@
     .feature {
         text-align: center;
         padding: 20px;
-        background: #f8f9fa;
+        background: var(--f8f8f8);
         border-radius: 8px;
-        border-left: 4px solid #007bff;
+        border-left: 4px solid var(--blueOne);
     }
 
     .feature .material-icons {
         font-size: 2.5rem;
-        color: #007bff;
+        color: var(--blueOne);
         margin-bottom: 15px;
     }
 
     .feature h3 {
         font-size: 1.3rem;
         margin-bottom: 10px;
-        color: #333;
+        color: var(--g000);
     }
 
     .feature p {
         font-size: 1rem;
-        color: #666;
+        color: var(--g555);
         line-height: 1.5;
     }
 
@@ -212,20 +212,20 @@
     }
 
     .quick-links li {
-        background: #f8f9fa;
+        background: var(--f8f8f8);
         padding: 15px 20px;
         border-radius: 8px;
-        border-left: 4px solid #28a745;
+        border-left: 4px solid var(--blueOne);
         transition: all 0.3s ease;
     }
 
     .quick-links li:hover {
-        background: #e9ecef;
+        background: var(--eee);
         transform: translateX(5px);
     }
 
     .quick-links a {
-        color: #007bff;
+        color: var(--blueOne);
         text-decoration: none;
         font-weight: 600;
     }

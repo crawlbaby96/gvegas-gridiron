@@ -72,14 +72,32 @@ export const tabs = [
                 dest: '/constitution',
             },
             {
-                icon: 'history',
+                icon: 'sports_football',
+                label: 'Go to Sleeper',
+                dest: `https://sleeper.app/leagues/${leagueID}`,
+            },
+        ]
+    },
+    {
+        icon: 'history',
+        label: 'League History',
+        nest: true,
+        key: 'league_history',
+        children: [
+            {
+                icon: 'timeline',
                 label: 'League History',
                 dest: '/league-history',
             },
             {
-                icon: 'sports_football',
-                label: 'Go to Sleeper',
-                dest: `https://sleeper.app/leagues/${leagueID}`,
+                icon: 'stars',
+                label: 'Hall of Fame',
+                dest: '/hall-of-fame',
+            },
+            {
+                icon: 'style',
+                label: 'T-Shirts',
+                dest: '/t-shirts',
             },
         ]
     },
