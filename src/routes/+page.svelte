@@ -10,12 +10,49 @@
 </script>
 
 <style>
+    .description-container {
+        position: relative;
+        padding: 40px;
+        background: transparent;
+        border-radius: 15px;
+        margin: 20px auto;
+        color: var(--g333);
+        text-align: center;
+        max-width: 600px;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    :global(.dark) .description-container {
+        background: transparent;
+        color: var(--g111);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+
+
     #home {
         display: flex;
         flex-wrap: nowrap;
         position: relative;
         overflow-y: hidden;
         z-index: 1;
+    }
+
+    #home::before {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: calc(50% - 235px);
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background-image: url('/badge.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.05;
+        z-index: -1;
+        pointer-events: none;
     }
 
     #main {
@@ -52,6 +89,26 @@
         }
         #home {
             flex-wrap: wrap;
+        }
+        
+        .description-container {
+            padding: 30px 20px;
+        }
+        
+        #home::before {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .description-container {
+            padding: 20px 15px;
+        }
+        
+        #home::before {
+            width: 300px;
+            height: 300px;
         }
     }
 
@@ -140,8 +197,10 @@
     <div id="main">
         <div class="text">
             <h6>{leagueName}</h6>
-            <!-- homepageText contains the intro text for your league, this gets edited in /src/lib/utils/leagueInfo.js -->
-            {@html homepageText }
+            <div class="description-container">
+                <!-- homepageText contains the intro text for your league, this gets edited in /src/lib/utils/leagueInfo.js -->
+                {@html homepageText }
+            </div>
             <!-- Most recent Blog Post (if enabled) -->
             {#if enableBlog}
                 <HomePost />
