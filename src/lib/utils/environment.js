@@ -1,0 +1,54 @@
+// Environment configuration for different deployment targets
+export const environment = {
+  // Detect environment based on URL or environment variable
+  isProduction: typeof window !== 'undefined' 
+    ? window.location.hostname === 'your-production-domain.com'
+    : process.env.NODE_ENV === 'production',
+  
+  isStaging: typeof window !== 'undefined'
+    ? window.location.hostname === 'your-staging-domain.com'
+    : process.env.NODE_ENV === 'staging',
+  
+  // Environment-specific settings
+  settings: {
+    production: {
+      apiBaseUrl: 'https://api.sleeper.app',
+      enableAnalytics: true,
+      enableDebug: false,
+      siteName: 'Gvegas Gridiron'
+    },
+    staging: {
+      apiBaseUrl: 'https://api.sleeper.app',
+      enableAnalytics: false,
+      enableDebug: true,
+      siteName: 'Gvegas Gridiron (Staging)'
+    },
+    development: {
+      apiBaseUrl: 'https://api.sleeper.app',
+      enableAnalytics: false,
+      enableDebug: true,
+      siteName: 'Gvegas Gridiron (Dev)'
+    }
+  }
+};
+
+// Get current environment settings
+export function getCurrentSettings() {
+  if (environment.isProduction) {
+    return environment.settings.production;
+  } else if (environment.isStaging) {
+    return environment.settings.staging;
+  } else {
+    return environment.settings.development;
+  }
+}
+
+// Helper function to check if we're in production
+export function isProduction() {
+  return environment.isProduction;
+}
+
+// Helper function to check if we're in staging
+export function isStaging() {
+  return environment.isStaging;
+} 

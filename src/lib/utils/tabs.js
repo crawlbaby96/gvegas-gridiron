@@ -79,6 +79,29 @@ export const tabs = [
         ]
     },
     {
+        icon: 'history',
+        label: 'League History',
+        nest: true,
+        key: 'league_history',
+        children: [
+            {
+                icon: 'timeline',
+                label: 'League History',
+                dest: '/league-history',
+            },
+            {
+                icon: 'stars',
+                label: 'Hall of Fame',
+                dest: '/hall-of-fame',
+            },
+            {
+                icon: 'style',
+                label: 'T-Shirts',
+                dest: '/t-shirts',
+            },
+        ]
+    },
+    {
         icon: 'lightbulb',
         label: 'Resources',
         dest: '/resources',

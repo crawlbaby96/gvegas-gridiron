@@ -10,41 +10,42 @@
 	let active = $state(tabs.find(tab => tab.dest == page.url.pathname || (tab.nest && tab.children.find(subTab => subTab.dest == page.url.pathname))));
 
 	let display = $state(false);
-	let el = $state();
+	let leagueInfoElement = $state();
+	let leagueHistoryElement = $state();
 	let width = $state();
 	let height= $state();
 	let left = $state();
 	let top = $state();
 
 	$effect(() => {
-		top = el?.getBoundingClientRect() ? el?.getBoundingClientRect().top  : 0;
-		const bottom = el?.getBoundingClientRect() ? el?.getBoundingClientRect().bottom  : 0;
+		const currentElement = activeNestedTab?.key === 'league_info' ? leagueInfoElement : leagueHistoryElement;
+		top = currentElement?.getBoundingClientRect() ? currentElement?.getBoundingClientRect().top  : 0;
+		const bottom = currentElement?.getBoundingClientRect() ? currentElement?.getBoundingClientRect().bottom  : 0;
 
 		height = bottom - top + 1;
 
-		left = el?.getBoundingClientRect() ? el?.getBoundingClientRect().left  : 0;
-		const right = el?.getBoundingClientRect() ? el?.getBoundingClientRect().right  : 0;
+		left = currentElement?.getBoundingClientRect() ? currentElement?.getBoundingClientRect().left  : 0;
+		const right = currentElement?.getBoundingClientRect() ? currentElement?.getBoundingClientRect().right  : 0;
 
 		width = right - left;
 	});
 
 	let innerWidth = $state();
 
-	const open = () => {
+	let tabChildren = $state([]);
+	let activeNestedTab = $state(null);
+
+	const open = (clickedTab) => {
+		if (clickedTab.nest) {
+			activeNestedTab = clickedTab;
+			tabChildren = clickedTab.children;
+		}
 		display = !display;
 	}
 
 	const subGoto = (dest) => {
-		open(false);
+		display = false;
 		goto(dest);
-	}
-
-	let tabChildren = $state([]);
-
-	for(const tab of tabs) {
-		if(tab.nest) {
-			tabChildren = tab.children;
-		}
 	}
 
 </script>
@@ -101,22 +102,35 @@
 	}
 </style>
 
-<div tabindex="0" role="button" class="overlay" style="display: {display ? "block" : "none"};" onclick={() => open(true)}></div>
+<div tabindex="0" role="button" class="overlay" style="display: {display ? "block" : "none"};" onclick={() => { display = false; }}></div>
 
 <div class="parent">
 	<TabBar class="navBar" {tabs} key={(tab) => tab.key} bind:active>
 		{#snippet tab(tab)}
 			{#if tab.nest}
-				<div bind:this={el}>
-					<Tab
-						{tab}
-						minWidth
-						onclick={() => open()}
-					>
-						<Icon class="material-icons">{tab.icon}</Icon>
-						<Label>{tab.label}</Label>
-					</Tab>
-				</div>
+				{#if tab.key === 'league_info'}
+					<div bind:this={leagueInfoElement}>
+						<Tab
+							{tab}
+							minWidth
+							onclick={() => open(tab)}
+						>
+							<Icon class="material-icons">{tab.icon}</Icon>
+							<Label>{tab.label}</Label>
+						</Tab>
+					</div>
+				{:else if tab.key === 'league_history'}
+					<div bind:this={leagueHistoryElement}>
+						<Tab
+							{tab}
+							minWidth
+							onclick={() => open(tab)}
+						>
+							<Icon class="material-icons">{tab.icon}</Icon>
+							<Label>{tab.label}</Label>
+						</Tab>
+					</div>
+				{/if}
 			{:else}
 				<Tab
 					class="{tab.label == 'Blog' && !enableBlog ? 'dontDisplay' : ''}"
