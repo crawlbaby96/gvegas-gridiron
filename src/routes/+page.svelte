@@ -98,6 +98,7 @@
         #home::before {
             width: 400px;
             height: 400px;
+            left: 50%;
         }
     }
 
