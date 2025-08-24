@@ -1,19 +1,19 @@
 /*   STEP 1   */
 export const leagueID = "1059513476260966400"; // your league ID
 export const leagueName = "Gvegas Gridiron"; // your league name
-export const dues = 10; // (optional) used in template constitution page
+export const dues = 12; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
 export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
 
 // HOME PAGE TEXT/
 export const homepageText = `
-  <p>G-Vegas Gridiron established in xxx year by our corrupt comish James Figo aka the Golden Reaper</p>
-  <p>Chuckles has somehow won twice.</p>
-  <p>So has our in house legal counsel william corncob corbin</p>
-  <p>We have epic draft weekends. .</p>
-  <p>TEST OF AUTOMATIC DEPLOYMENT</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Congratulations. You've made it to the official website of the Gvegas Gridiron Fantasy Football League - otherwise known as the greatest league in the history of the galaxy.</p>
+  <p>The Gvegas Gridiron Fantasy Football League was founded in 2011 in beautiful Greenville, South Carolina, where the spirit of competition meets the charm of the Blue Ridge Mountains. What began as a local gathering of football enthusiasts quickly evolved into a premier league that has become a cornerstone of camaraderie, strategy, and gridiron glory. Since its inception, Gvegas Gridiron has been more than just a game—it’s been a tradition rooted in the vibrant culture of one of the Southeast’s most dynamic cities.</p>
+  <p>At the helm of this league stands its most celebrated figure, legendary musician and songwriter Steve Eager, whose influence and passion have helped shape Gvegas into its official, enduring form. Known as much for his musical legacy as his love of Greenville, Eager’s involvement elevated the league into something far greater than a seasonal pastime. His leadership and vision brought a unique blend of artistry and intensity that gave Gvegas Gridiron its identity, and his presence continues to inspire every matchup played under its banner.</p>
+  <p>Though more and more of our members hail from around the country, this great league is inseparable from its hometown, Greenville—a city where tradition and modernity coexist in perfect balance. With the Reedy River flowing through the heart of its emerging downtown, Greenville offers a backdrop as lively as the competition on the fantasy field. Surrounded by the natural beauty of the Blue Ridge Mountains and energized by a thriving community, the Gvegas Gridiron Fantasy Football League reflects the character of its city: bold, spirited, and always ready for the next challenge.</p>
+  <p>It's a hard league to make, but a great league to be in. Welcome to the brotherhood. May you one day experience the rich joy that comes with being able to see your name on the famed Jeff Betz Memorial Trophy. </p>
+  <p> </p>
+  <p> </p>
 `;
 
 // /Manager Info/
