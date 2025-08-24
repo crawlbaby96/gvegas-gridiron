@@ -241,7 +241,7 @@ export const managers = [
     {
       "managerID": "827057314363199488",
       "name": "Wes Gretkowski",
-      "location": "Greenville, South Carolina"
+      "location": "Greenville, South Carolina",
       "bio": "Team Wesgret",
       "photo": "/managers/everyone.png",
       "fantasyStart": "2025",
@@ -262,7 +262,7 @@ export const managers = [
     {
       "managerID": "827412517738393600",
       "name": "Elliot Figueroa",
-      "location": "Greenville, South Carolina"
+      "location": "Greenville, South Carolina",
       "bio": "Dolphin Death",
       "photo": "/managers/everyone.png",
       "fantasyStart": "2011",
@@ -290,7 +290,7 @@ export const managers = [
       "favoriteTeam": "car",
       "mode": null,
       "rival": {
-        name: "Noel Januszewski"",
+        name: "Noel Januszewski",
         link: null,
         image: "/managers/everyone.png",
       },
@@ -363,6 +363,7 @@ export const managers = [
       "philosophy": "How did you all let Corbin win the league twice? Never again on my watch.",
       "tradingScale": 3,
       "preferredContact": "Carrier Pidgeon",
+    }
   ]
 
 // Hall of Fame entries
