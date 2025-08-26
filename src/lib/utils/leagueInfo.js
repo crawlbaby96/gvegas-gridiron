@@ -179,7 +179,7 @@ export const managers = [
       "managerID": "826875538638512128",
       "name": "Jose Vera",
       "location": "Mauldin, South Carolina",
-      "bio": "Some of the best moments start off at the beginning with the trade that started my legacy. Ndamukong Suh for Demarco Murray.  I learned a lot after this trade. Then in 2015 or 2016, I had an all-star squad in rookie Saquon Barkley, DeAndre Hopkins, (Odell Beckham junior, and even Rob Gronkowski. Courtesy of John arndt). leading the helm was 35  year Carson "the oldie but goldie" palmer. In this amazing roster. I lose in the playoffs to motor City kitty! 🐈 I must have let a black cat walk right in front of me because I unfortunately lost to a lot of people 2nd string players despite all my player setting record high points. I believe I scored over 300 pts and still lost. What a year though!",
+      "bio": "Some of the best moments start off at the beginning with the trade that started my legacy. Ndamukong Suh for Demarco Murray.  I learned a lot after this trade. Then in 2015 or 2016, I had an all-star squad in rookie Saquon Barkley, DeAndre Hopkins, (Odell Beckham junior, and even Rob Gronkowski. Courtesy of John arndt). leading the helm was 35  year Carson \"the oldie but goldie\" palmer. In this amazing roster. I lose in the playoffs to motor City kitty! 🐈 I must have let a black cat walk right in front of me because I unfortunately lost to a lot of people 2nd string players despite all my player setting record high points. I believe I scored over 300 pts and still lost. What a year though!",
       "photo": "/managers/jose-avatar.png",
       "fantasyStart": "2014",
       "favoriteTeam": "ne",
