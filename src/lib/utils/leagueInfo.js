@@ -567,51 +567,186 @@ export const tShirts = [
         id: 3,
         year: 2022,
         title: "G-Vegas Gridiron 2022",
-        image: "/managers/everyone.png",
+        image: "/t-shirts/2022-shirt.jpg",
         color: "Charcoal Gray",
         sayings: [
             {
-                text: "Maverick",
-                story: "Rookbuke's simple but effective nickname that perfectly describes his independent approach to fantasy football.",
-                author: "Rookbuke"
+                text: "LEAGUE WINNER: PHILLYCHEESESTEAKS",
+                story: "Chuck Pace's championship victory in 2022, earning him the title of league winner and a place on the shirt.",
+                author: "Chuck Pace"
             },
             {
-                text: "Bad News Babymamas",
-                story: "njanuszewski's team name that became one of the most talked-about in league history. The story involves a draft day incident that's now legendary.",
-                author: "njanuszewski"
+                text: "THEY LANCE 'EM, I LAMINATE 'EM",
+                story: "A memorable quote that became a league catchphrase, possibly related to a specific game or player performance.",
+                author: "League Member"
             },
             {
-                text: "DTK",
-                story: "donttakekindly's abbreviated team name that stands for 'Don't Take Kindly' - his philosophy on trade negotiations.",
-                author: "donttakekindly"
+                text: "BLAH BLAH BLAH... DIDN'T BEFORE... MEAT",
+                story: "A humorous quote that captured the league's attention, likely from a draft or trade discussion.",
+                author: "League Member"
+            },
+            {
+                text: "KUZMA'S KORNER",
+                story: "A reference to a specific area or strategy, possibly named after a player or manager.",
+                author: "League Member"
+            },
+            {
+                text: "\"I REALLY LIKE WHERE MY TEAM IS AT\"",
+                story: "A confident declaration about team status that became memorable in league lore.",
+                author: "League Member"
+            },
+            {
+                text: "WHO IS CARLOS?",
+                story: "A mysterious question that became an inside joke in the league, possibly about an unknown player or person.",
+                author: "League Member"
+            },
+            {
+                text: "DON'T GIVE UP!",
+                story: "A motivational message that resonated with league members during challenging times.",
+                author: "League Member"
+            },
+            {
+                text: "SHOULDN'T HAVE TRADED KELCE",
+                story: "A regretful statement about trading Travis Kelce, highlighting the importance of keeping star players.",
+                author: "League Member"
+            },
+            {
+                text: "KING OF THE PREMIER",
+                story: "A title given to someone who dominated the premier league or division.",
+                author: "League Member"
+            },
+            {
+                text: "LAST PLACE BOWL",
+                story: "The annual competition for teams at the bottom of the standings, a league tradition.",
+                author: "League Tradition"
+            },
+            {
+                text: "LARRY'S SHERIFFS CLOWNS FAN",
+                story: "A reference to Larry's team name and his fandom, becoming a memorable league moment.",
+                author: "Larry"
+            },
+            {
+                text: "GREAT JOB, BROOK",
+                story: "A compliment to Brook for an impressive performance or achievement.",
+                author: "League Member"
+            },
+            {
+                text: "MIKE BOONE",
+                story: "A player reference that became significant, possibly due to a key performance or trade.",
+                author: "League Member"
+            },
+            {
+                text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND GLOOMY",
+                story: "A touching sentiment about how the league provided joy and community during difficult times.",
+                author: "League Member"
+            },
+            {
+                text: "RIDE",
+                story: "A simple but powerful word that became a rallying cry for the league.",
+                author: "League Member"
+            },
+            {
+                text: "SCHWARZENEGGER TATE: BILLY BUCK",
+                story: "A nickname for Billy Buck that combined Arnold Schwarzenegger with a player name, becoming legendary.",
+                author: "Billy Buck"
             }
         ],
-        description: "The 2022 shirt featuring some of the most memorable team names and catchphrases from that season."
+        description: "The 2022 shirt featuring Chuck Pace's championship victory and the most memorable sayings and moments from that season."
     },
     {
         id: 4,
         year: 2021,
         title: "G-Vegas Gridiron 2021",
-        image: "/managers/everyone.png",
+        image: "/t-shirts/2021-shirt.jpg",
         color: "Burgundy Red",
         sayings: [
             {
-                text: "Dolphin Death",
-                story: "figo88's team name that became a running joke throughout the season, especially during Dolphins games.",
-                author: "figo88"
+                text: "LEAGUE WINNER - PLAXICO'S GUN-N-RUN",
+                story: "Jon Egan's championship victory in 2021 with his team 'Plaxico's Gun n Run', earning him the league title.",
+                author: "Jon Egan"
             },
             {
-                text: "Toilet Bowl Bots 🚽",
-                story: "Breyno's self-deprecating team name that became a badge of honor for teams fighting to avoid the toilet bowl.",
-                author: "Breyno"
+                text: "RORY GOT MIXXED",
+                story: "A memorable moment involving Rory Hayes that became an instant classic in league lore.",
+                author: "Rory Hayes"
             },
             {
-                text: "Iceman",
-                story: "iceman2000af's cool nickname that perfectly describes his calm demeanor during high-pressure fantasy situations.",
-                author: "iceman2000af"
+                text: "BRODIE'S SUNROOF",
+                story: "A reference to Brodie's car or a memorable incident involving a sunroof that became legendary.",
+                author: "Brodie"
+            },
+            {
+                text: "KICKERGATE",
+                story: "A controversy or memorable moment involving kickers that became known as 'Kickergate'.",
+                author: "League Scandal"
+            },
+            {
+                text: "LINEUPGATE",
+                story: "Another league controversy, this time involving lineup decisions that caused drama.",
+                author: "League Scandal"
+            },
+            {
+                text: "THE BET",
+                story: "A significant bet or wager made during the season that became memorable.",
+                author: "League Members"
+            },
+            {
+                text: "GODSPEED TIMBO",
+                story: "A farewell or tribute to Timbo, possibly related to his departure or a significant moment.",
+                author: "League Member"
+            },
+            {
+                text: "LITTLE BEAR",
+                story: "A nickname or reference that became significant in the league that season.",
+                author: "League Member"
+            },
+            {
+                text: "STROKEGATE",
+                story: "Another 'gate' controversy, this time involving a stroke-related incident or reference.",
+                author: "League Scandal"
+            },
+            {
+                text: "400 HUNDO",
+                story: "A reference to $400, possibly from a bet, trade, or league fee that became memorable.",
+                author: "League Member"
+            },
+            {
+                text: "MONDAY NIGHT MIRACLE 2.0",
+                story: "A second edition of a Monday Night Miracle, likely involving a dramatic comeback or performance.",
+                author: "League Member"
+            },
+            {
+                text: "COOPERGATE",
+                story: "Another controversy involving someone named Cooper that became part of league lore.",
+                author: "League Scandal"
+            },
+            {
+                text: "6:30 MILE",
+                story: "A reference to a 6:30 mile time, possibly from a bet or challenge involving running.",
+                author: "League Member"
+            },
+            {
+                text: "GME 100K EOY",
+                story: "A reference to GameStop stock and a prediction about reaching $100K by end of year.",
+                author: "League Member"
+            },
+            {
+                text: "DUNLAP YOU FAT POS",
+                story: "A memorable quote directed at Dunlap, possibly from a heated moment or game.",
+                author: "League Member"
+            },
+            {
+                text: "STATGATE",
+                story: "Another controversy, this time involving statistics or stat corrections.",
+                author: "League Scandal"
+            },
+            {
+                text: "NUKEGATE",
+                story: "A controversy involving 'Nuke' or DeAndre Hopkins that became memorable.",
+                author: "League Scandal"
             }
         ],
-        description: "The 2021 edition featuring the league's growing collection of memorable team names and player nicknames."
+        description: "The 2021 edition featuring Jon Egan's championship and the most memorable moments, controversies, and sayings from that season."
     }
 ];
   

@@ -1,12 +1,16 @@
 // Environment configuration for different deployment targets
 export const environment = {
-  // Detect environment based on URL or environment variable
+  // Detect environment based on environment variables and URL
   isProduction: typeof window !== 'undefined' 
-    ? window.location.hostname === 'your-production-domain.com'
+    ? (window.location.hostname.includes('vercel.app') && !window.location.hostname.includes('staging')) ||
+      window.location.hostname.includes('gvegas-gridiron') ||
+      process.env.NODE_ENV === 'production'
     : process.env.NODE_ENV === 'production',
   
   isStaging: typeof window !== 'undefined'
-    ? window.location.hostname === 'your-staging-domain.com'
+    ? window.location.hostname.includes('staging') ||
+      window.location.hostname.includes('preview') ||
+      process.env.NODE_ENV === 'staging'
     : process.env.NODE_ENV === 'staging',
   
   // Environment-specific settings

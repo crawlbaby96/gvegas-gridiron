@@ -4,11 +4,12 @@
     import { dev } from '$app/environment';
     import { injectAnalytics } from '@vercel/analytics/sveltekit';
     import { page } from '$app/stores';
+    import { isProduction } from '$lib/utils/environment';
  
     injectAnalytics({ mode: dev ? 'development' : 'production' });
     
-    // Check if we're on the home page (coming soon page)
-    $: isComingSoon = $page.url.pathname === '/';
+    // Check if we're on the home page AND in production (coming soon page)
+    $: isComingSoon = $page.url.pathname === '/' && isProduction();
 </script>
 
 <main>
