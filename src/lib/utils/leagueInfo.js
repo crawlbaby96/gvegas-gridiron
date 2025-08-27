@@ -8,7 +8,7 @@ export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VI
 // HOME PAGE TEXT/
 export const homepageText = `
   <p>Congratulations. You've made it to the official website of the Gvegas Gridiron Fantasy Football League - otherwise known as the greatest league in the history of the galaxy.</p>
-  <p>The Gvegas Gridiron Fantasy Football League was founded in 2011 in beautiful Greenville, South Carolina, where the spirit of competition meets the charm of the Blue Ridge Mountains. What began as a local gathering of football enthusiasts quickly evolved into a premier league that has become a cornerstone of camaraderie, strategy, and gridiron glory. Since its inception, Gvegas Gridiron has been more than just a game—it’s been a tradition rooted in the vibrant culture of one of the Southeast’s most dynamic cities.</p>
+  <p>The Gvegas Gridiron Fantasy Football League was founded in 2011 in beautiful Greenville, South Carolina, where the spirit of competition meets the charm of the American South. What began as a local gathering of football enthusiasts quickly evolved into a premier league that has become a cornerstone of camaraderie, strategy, and gridiron glory. Since its inception, Gvegas Gridiron has been more than just a game—it’s been a tradition rooted in the vibrant culture of one of the Southeast’s most dynamic cities.</p>
   <p>At the helm of this league stands its most celebrated figure, legendary musician and songwriter Steve Eager, whose influence and passion have helped shape Gvegas into its official, enduring form. Known as much for his musical legacy as his love of Greenville, Eager’s involvement elevated the league into something far greater than a seasonal pastime. His leadership and vision brought a unique blend of artistry and intensity that gave Gvegas Gridiron its identity, and his presence continues to inspire every matchup played under its banner.</p>
   <p>Though more and more of our members hail from around the country, this great league is inseparable from its hometown, Greenville—a city where tradition and modernity coexist in perfect balance. With the Reedy River flowing through the heart of its emerging downtown, Greenville offers a backdrop as lively as the competition on the fantasy field. Surrounded by the natural beauty of the Blue Ridge Mountains and energized by a thriving community, the Gvegas Gridiron Fantasy Football League reflects the character of its city: bold, spirited, and always ready for the next challenge.</p>
   <p>It's a hard league to make, but a great league to be in. Welcome to the brotherhood. May you one day experience the rich joy that comes with being able to see your name on the famed Jeff Betz Memorial Trophy. </p>
@@ -32,7 +32,7 @@ export const managers = [
       "managerID": "419350278400126976",
       "name": "Ricky Nichols",
       "location": "Sterling, Kansas",
-      "bio": "Children of the Corn",
+      "bio": "In the fields of fantasy football, they harvest wins but hunger for the ultimate prize...The Legend Begins Since the league's very first season, the Children of the Corn, formally La Furia Roja, have been a force to be reckoned with. As one of the founding franchises, this team has deep roots in our league's history and has consistently proven that experience breeds excellence. Through seasons of triumph and heartbreak, the Children have remained a perennial threat. The Sabbatical Years (2015-2021) Like the mysterious disappearance of the Roanoke Colony of 1590, the Children of the Corn vanished from our league without a trace. During this hiatus, legends grew about their inevitable return. Would they ever return to claim their rightful spot atop the league? Return of the Corn The Children of the Corn returned with a vengeance, quickly establishing themselves once again as one of the league's most successful franchises. Boasting one of the best overall records in 2022, they've proven that true fantasy football prowess never truly fades. Their tactical acumen and roster management skills have consistently put them in contention year after year. So Close, Yet So Far Despite their impressive regular season success, the ultimate prize—a league championship—remains tantalizingly out of reach. Like a crop just beyond harvest, that title continues to elude them. But champions aren't made by giving up; they're forged through persistence and determination. Last Season's Promise The 2024-25 season saw the Children make their deepest playoff run since their return, reminding everyone why they're considered championship contenders. That momentum isn't just a memory—it's fuel for the fire that burns within this franchise. 2025: The Year of Reckoning This season, the Children return with renewed purpose. Armed with years of experience, one of the league's best historical records, and the hunger that comes from being so close to glory, they're ready to finally harvest their championship. The fields have been planted, new strategies sown; the time for reaping is at hand.",
       "photo": "/managers/ricky-avatar.png",
       "fantasyStart": "2011",
       "favoriteTeam": "ind",
@@ -221,7 +221,7 @@ export const managers = [
       "managerID": "826987993683304448",
       "name": "Noel Januszewski",
       "location": "Raleigh, North Carolina",
-      "bio": "Bad News Babymamas",
+      "bio": "Noel “girl next door not babymama” Januszewski - Manager of THE bad news babymamas. Multi-year gvegas gridiron vet, youngest member at the old age of 25. The definition of mediocrity, never worse than 9th, never better than 4th. Ortho PT off the field but my players can’t stay on the field. William Corbin will forever live in my nightmares.",
       "photo": "/managers/noel-avatar.png",
       "fantasyStart": "2020",
       "favoriteTeam": "ne",
@@ -242,7 +242,7 @@ export const managers = [
       "managerID": "827057314363199488",
       "name": "Wes Gretkowski",
       "location": "Greenville, South Carolina",
-      "bio": "Team Wesgret",
+      "bio": "The new guy.",
       "photo": "/managers/wes-avatar.png",
       "fantasyStart": "2025",
       "favoriteTeam": "gb",
@@ -377,7 +377,7 @@ export const hallOfFame = [
         category: "Championship",
         featuredPlayer: null, // Can reference a player ID from Sleeper API
         managerID: "450350679567888384", // James Figueroa's manager ID
-        inductedYear: 2016
+        inductedYear: 2025
     },
     {
         id: 2,
@@ -388,7 +388,7 @@ export const hallOfFame = [
         category: "Memorable Moment",
         featuredPlayer: 1102, // Crawlbaby's favorite player
         managerID: "738166858095673344", // Crawlbaby's manager ID
-        inductedYear: 2019
+        inductedYear: 2025
     },
     {
         id: 3,
@@ -399,18 +399,18 @@ export const hallOfFame = [
         category: "Championship",
         featuredPlayer: null,
         managerID: null, // Add William Corbin's manager ID if available
-        inductedYear: 2018
+        inductedYear: 2025
     },
     {
         id: 4,
-        title: "The Rookie Sensation",
-        years: "2020",
-        image: "/managers/everyone.png",
-        description: "A rookie manager's incredible first season, defying all odds to reach the championship game. This Cinderella story proved that experience isn't everything in fantasy football.",
-        category: "Rookie Achievement",
+        title: "Steve Eager Opens 2023 Draft",
+        years: "2023",
+        image: "/t-shirts/steve-eager-draft.png",
+        description: "Steve was kind enough to record a legendary video to kick off the 2023 fantasy draft and cemented himself as a Gvegas legend.",
+        category: "Memorable Moment",
         featuredPlayer: null,
         managerID: null,
-        inductedYear: 2021
+        inductedYear: 2025
     }
 ];
 
@@ -467,7 +467,7 @@ export const tShirts = [
             },
             {
                 text: "$85 ALLEN LAZARD",
-                story: "A reference to a specific auction bid or trade involving Allen Lazard, likely a memorable moment in the draft or a trade that became legendary.",
+                story: "A reference to a specific auction bid involving Allen Lazard, likely a memorable moment in the draft or a trade that became legendary.",
                 author: "League Member"
             },
             {
