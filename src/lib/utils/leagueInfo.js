@@ -377,7 +377,7 @@ export const hallOfFame = [
         category: "Championship",
         featuredPlayer: null, // Can reference a player ID from Sleeper API
         managerID: "450350679567888384", // James Figueroa's manager ID
-        inductedYear: 2016
+        inductedYear: 2025
     },
     {
         id: 2,
@@ -388,7 +388,7 @@ export const hallOfFame = [
         category: "Memorable Moment",
         featuredPlayer: 1102, // Crawlbaby's favorite player
         managerID: "738166858095673344", // Crawlbaby's manager ID
-        inductedYear: 2019
+        inductedYear: 2025
     },
     {
         id: 3,
@@ -399,18 +399,18 @@ export const hallOfFame = [
         category: "Championship",
         featuredPlayer: null,
         managerID: null, // Add William Corbin's manager ID if available
-        inductedYear: 2018
+        inductedYear: 2025
     },
     {
         id: 4,
-        title: "The Rookie Sensation",
-        years: "2020",
-        image: "/managers/everyone.png",
-        description: "A rookie manager's incredible first season, defying all odds to reach the championship game. This Cinderella story proved that experience isn't everything in fantasy football.",
-        category: "Rookie Achievement",
+        title: "Steve Eager Opens 2023 Draft",
+        years: "2023",
+        image: "/t-shirts/steve-eager-draft.png",
+        description: "Steve was kind enough to record a legendary video to kick off the 2023 fantasy draft and cemented himself as a Gvegas legend.",
+        category: "Memorable Moment",
         featuredPlayer: null,
         managerID: null,
-        inductedYear: 2021
+        inductedYear: 2025
     }
 ];
 
@@ -467,7 +467,7 @@ export const tShirts = [
             },
             {
                 text: "$85 ALLEN LAZARD",
-                story: "A reference to a specific auction bid or trade involving Allen Lazard, likely a memorable moment in the draft or a trade that became legendary.",
+                story: "A reference to a specific auction bid involving Allen Lazard, likely a memorable moment in the draft or a trade that became legendary.",
                 author: "League Member"
             },
             {
