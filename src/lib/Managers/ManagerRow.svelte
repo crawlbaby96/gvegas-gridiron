@@ -1,9 +1,10 @@
 <script>
     import { goto } from "$app/navigation";
 	import { getDatesActive, getRosterIDFromManagerID, getTeamNameFromTeamManagers } from "$lib/utils/helperFunctions/universalFunctions";
+    import { getManagerAwardsSummary, formatAwardsSummary } from "$lib/utils/helperFunctions/managerAwardsSummary";
     import {dynasty} from "$lib/utils/leagueInfo"
 
-    export let manager, leagueTeamManagers, key;
+    export let manager, leagueTeamManagers, awards = [], key;
 
     let retired = false;
 
@@ -19,6 +20,10 @@
     }
 
     const commissioner = manager.managerID ? leagueTeamManagers.users[manager.managerID].is_owner : false;
+
+    // Calculate awards summary
+    $: awardsSummary = getManagerAwardsSummary(awards, rosterID, manager.managerID, leagueTeamManagers);
+    $: formattedAwards = formatAwardsSummary(awardsSummary);
 </script>
 
 <style>
@@ -113,6 +118,30 @@
         width: 100%;
         position: relative;
         z-index: 2;
+    }
+
+    .awards {
+        font-size: 0.75em;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0.5em 0 1em;
+        line-height: 1.2em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3em;
+    }
+
+    .awardsIcon {
+        height: 14px;
+        width: 14px;
+        opacity: 0.9;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    }
+
+    .noAwards {
+        opacity: 0.6;
+        font-style: italic;
     }
 
     .name {
@@ -228,6 +257,16 @@
             font-size: 0.9em;
         }
 
+        .awards {
+            font-size: 0.65em;
+            margin: 0.4em 0 0.8em;
+        }
+
+        .awardsIcon {
+            height: 12px;
+            width: 12px;
+        }
+
         .infoIcon {
             height: 32px;
             width: 32px;
@@ -275,6 +314,16 @@
         .team {
             font-size: 0.85em;
         }
+
+        .awards {
+            font-size: 0.6em;
+            margin: 0.3em 0 0.7em;
+        }
+
+        .awardsIcon {
+            height: 11px;
+            width: 11px;
+        }
     }
 </style>
 
@@ -295,6 +344,15 @@
     <div class="managerInfo">
         <div class="name">{manager.name}</div>
         <div class="team">{getTeamNameFromTeamManagers(leagueTeamManagers, rosterID, year)}</div>
+        
+        <div class="awards" class:noAwards={awardsSummary.totalMajorAwards === 0}>
+            {#if awardsSummary.totalMajorAwards > 0}
+                <img class="awardsIcon" src="/trophy.png" alt="Awards" />
+                {formattedAwards}
+            {:else}
+                {formattedAwards}
+            {/if}
+        </div>
         
         <div class="info">
             <!-- Favorite team (optional) -->

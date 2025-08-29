@@ -5,7 +5,7 @@
 	import { goto } from '$app/navigation';
 
 	export let data;
-	const {managers, leagueTeamManagersData} = data;
+	const {managers, leagueTeamManagersData, awardsData} = data;
 
     onMount(() => {
         if(!managers.length) {
@@ -36,7 +36,13 @@
         </div>
     {:then leagueTeamManagers}
         {#if managers.length}
-            <AllManagers {managers}  {leagueTeamManagers}/>
+            {#await awardsData}
+                <AllManagers {managers} {leagueTeamManagers} awards={[]}/>
+            {:then awards}
+                <AllManagers {managers} {leagueTeamManagers} {awards}/>
+            {:catch}
+                <AllManagers {managers} {leagueTeamManagers} awards={[]}/>
+            {/await}
         {/if}
     {:catch error}
         <!-- promise was rejected -->
