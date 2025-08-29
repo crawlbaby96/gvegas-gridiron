@@ -2,14 +2,15 @@
 export const environment = {
   // Detect environment based on environment variables and URL
   isProduction: typeof window !== 'undefined' 
-    ? (window.location.hostname.includes('vercel.app') && !window.location.hostname.includes('staging')) ||
-      window.location.hostname.includes('gvegas-gridiron') ||
-      process.env.NODE_ENV === 'production'
+    ? window.location.hostname === 'gvegas-gridiron.com' ||
+      window.location.hostname === 'www.gvegas-gridiron.com' ||
+      (process.env.NODE_ENV === 'production' && !window.location.hostname.includes('staging') && !window.location.hostname.includes('preview'))
     : process.env.NODE_ENV === 'production',
   
   isStaging: typeof window !== 'undefined'
     ? window.location.hostname.includes('staging') ||
       window.location.hostname.includes('preview') ||
+      (window.location.hostname.includes('vercel.app') && !window.location.hostname.includes('gvegas-gridiron.com')) ||
       process.env.NODE_ENV === 'staging'
     : process.env.NODE_ENV === 'staging',
   
