@@ -78,12 +78,13 @@
 
     .managerPhoto {
         display: block;
-        border-radius: 100%;
-        width: 70%;
-        max-width: 200px;
+        border-radius: 0;
+        width: 90%;
+        max-width: 400px;
         height: auto;
-        margin: 5em auto 1em;
-        box-shadow: 0 0 8px 4px #aaa;
+        margin: 3em auto 2em;
+        box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.3);
+        border: 2px solid var(--ccc);
     }
 
     h2 {
