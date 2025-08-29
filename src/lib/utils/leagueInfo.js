@@ -32,9 +32,10 @@ export const managers = [
       "managerID": "419350278400126976",
       "name": "Ricky Nichols",
       "location": "Sterling, Kansas",
-      "bio": "In the fields of fantasy football, they harvest wins but hunger for the ultimate prize...The Legend Begins Since the league's very first season, the Children of the Corn, formally La Furia Roja, have been a force to be reckoned with. As one of the founding franchises, this team has deep roots in our league's history and has consistently proven that experience breeds excellence. Through seasons of triumph and heartbreak, the Children have remained a perennial threat. The Sabbatical Years (2015-2021) Like the mysterious disappearance of the Roanoke Colony of 1590, the Children of the Corn vanished from our league without a trace. During this hiatus, legends grew about their inevitable return. Would they ever return to claim their rightful spot atop the league? Return of the Corn The Children of the Corn returned with a vengeance, quickly establishing themselves once again as one of the league's most successful franchises. Boasting one of the best overall records in 2022, they've proven that true fantasy football prowess never truly fades. Their tactical acumen and roster management skills have consistently put them in contention year after year. So Close, Yet So Far Despite their impressive regular season success, the ultimate prize—a league championship—remains tantalizingly out of reach. Like a crop just beyond harvest, that title continues to elude them. But champions aren't made by giving up; they're forged through persistence and determination. Last Season's Promise The 2024-25 season saw the Children make their deepest playoff run since their return, reminding everyone why they're considered championship contenders. That momentum isn't just a memory—it's fuel for the fire that burns within this franchise. 2025: The Year of Reckoning This season, the Children return with renewed purpose. Armed with years of experience, one of the league's best historical records, and the hunger that comes from being so close to glory, they're ready to finally harvest their championship. The fields have been planted, new strategies sown; the time for reaping is at hand.",
+      "bio": "In the fields of fantasy football, they harvest wins but hunger for the ultimate prize...The Legend Begins Since the league's very first season, the Children of the Corn, formally La Furia Roja, have been a force to be reckoned with. As one of the founding franchises, this team has deep roots in our league's history and has consistently proven that experience breeds excellence. Through seasons of triumph and heartbreak, the Children have remained a perennial threat. The Sabbatical Years (2015-2021) Like the mysterious disappearance of the Roanoke Colony of 1590, the Children of the Corn vanished from our league without a trace. During this hiatus, legends grew about their inevitable return. Would they ever return to claim their rightful spot atop the league? Return of the Corn The Children of the Corn returned with a vengeance, quickly establishing themselves once again as one of the league's most successful franchises. Boasting one of the best overall records in 2022, they've proven that true fantasy football prowess never truly fades. Their tactical acumen and roster management skills have consistently put them in contention year after year. So Close, Yet So Far Despite their impressive regular season success, the ultimate prize—a league championship—remains tantalizingly out of reach. Like a crop just beyond harvest, that title continues to elude them. But champions aren't made by giving up; they're forged through persistence and determination. Last Season's Promise The 2024-25 season saw the Children make their deepest playoff run since their return, reminding everyone why they're considered championship contenders. That momentum isn't just a memory—it's fuel for the fire that burns within this franchise. 2025: The Year of Reckoning This season, the Children return with renewed purpose. Armed with years of experience, one of the league's best historical records, and the hunger that comes from being so close to glory, they're ready to finally harvest their championship. The fields have been planted, new strategies sown; the time for reaping is at hand.",
       "photo": "/managers/ricky-avatar.png",
       "fantasyStart": "2011",
+      "council": true,
       "favoriteTeam": "ind",
       "mode": null,
       "rival": {
@@ -77,6 +78,7 @@ export const managers = [
       "bio": "THE GOLDEN REAPER - League Commissioner",
       "photo": "/managers/james-avatar.png",
       "fantasyStart": "2011",
+      "council": true,
       "favoriteTeam": "car",
       "mode": null,
       "rival": {
@@ -140,6 +142,7 @@ export const managers = [
       "bio": "Monday Night Comeback - You already know bout me",
       "photo": "/managers/chris-avatar.png",
       "fantasyStart": 2011,
+      "council": true,
       "favoriteTeam": "was",
       "mode": null,
       "rival": {
@@ -287,6 +290,7 @@ export const managers = [
       "bio": "Toilet Bowl Bots 🚽",
       "photo": "/managers/brad-avatar.png",
       "fantasyStart": "2023",
+      "council": true,
       "favoriteTeam": "car",
       "mode": null,
       "rival": {
@@ -329,6 +333,7 @@ export const managers = [
       "bio": "Plaxico's Gun n Run",
       "photo": "/managers/jon-avatar.png",
       "fantasyStart": "2013",
+      "council": true,
       "favoriteTeam": "gb",
       "mode": null,
       "rival": {

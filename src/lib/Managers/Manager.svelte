@@ -76,15 +76,39 @@
         margin: 0 auto 4em;
     }
 
+    .managerPhotoContainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 3em auto 2em;
+    }
+
     .managerPhoto {
         display: block;
         border-radius: 0;
         width: 90%;
         max-width: 400px;
         height: auto;
-        margin: 3em auto 2em;
         box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.3);
         border: 2px solid var(--ccc);
+    }
+
+    .councilOverlay {
+        position: absolute;
+        top: 20px;
+        left: calc(5% + 20px);
+        height: 60px;
+        width: 50px;
+        z-index: 2;
+        opacity: 0.9;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+        transition: all 0.3s ease;
+    }
+
+    .councilOverlay:hover {
+        opacity: 1;
+        transform: scale(1.1);
     }
 
     h2 {
@@ -205,6 +229,13 @@
         .infoTeam {
             height: 30px;
         }
+
+        .councilOverlay {
+            height: 50px;
+            width: 42px;
+            top: 15px;
+            left: calc(5% + 15px);
+        }
 	}
 
     @media (max-width: 370px) {
@@ -220,12 +251,24 @@
         .infoTeam {
             height: 24px;
         }
+
+        .councilOverlay {
+            height: 45px;
+            width: 38px;
+            top: 12px;
+            left: calc(5% + 12px);
+        }
     }
 </style>
 
 <div class="managerContainer">
     <div class="managerConstrained">
-        <img class="managerPhoto" src="{viewManager.photo}" alt="manager"/>
+        <div class="managerPhotoContainer">
+            <img class="managerPhoto" src="{viewManager.photo}" alt="manager"/>
+            {#if viewManager.council}
+                <img class="councilOverlay" src="/council-symbol.svg" alt="League Council Member" title="League Council Member" />
+            {/if}
+        </div>
         <h2>
             {viewManager.name}
             <div class="teamSub">{coOwners ? 'Co-' : ''}Manager of <i>{getTeamNameFromTeamManagers(leagueTeamManagers, rosterID, year)}</i></div>
