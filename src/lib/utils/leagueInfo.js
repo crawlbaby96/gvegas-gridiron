@@ -457,7 +457,7 @@ export const tShirts = [
             },
             {
                 text: "POSITIVITY CZAR",
-                story: "We can always count on Chuckles for unsolicited positivity!!",
+                story: "Like a golden retriever with anxiety medication, Chuckles injects unwanted optimism into every fantasy disaster. Even when your team burns to the ground, he'll find a way to tell you why it's actually good for your playoff chances.",
                 author: "Philly CheeseSteaks"
             },
             {
@@ -472,22 +472,22 @@ export const tShirts = [
             },
             {
                 text: "$85 ALLEN LAZARD",
-                story: "Nothing like spending the majority of your FAAB on 1 player that you dropped 2 days earlier....",
+                story: "The classic 'big brain' move: dropping Allen Lazard, immediately panicking, then spending $85 FAAB to get him back. It's like paying premium prices for your own leftovers, but with more public humiliation.",
                 author: "Rogue Broncos"
             },
             {
                 text: "I REALLY LIKE ICEMAN'S DRAFT",
-                story: "Much like Jim Cramer, inverse corbin is a good leading indicator. So you really don't want to hear this from Corbins mouth.",
+                story: "When Corbin compliments your draft, start updating your résumé for next season. He's the human equivalent of a reverse uno card - whatever he endorses immediately becomes cursed. Jim Cramer has better fantasy football predictions.",
                 author: "North Korean Fighting Kims"
             },
             {
                 text: "BETTER TO BE LUCKY THAN GOOD",
-                story: "Corn's end of season reflection on the reality of fantasy football. while other talk about how unfair it is. ricky embrasses the rng of fantasy football.",
+                story: "While everyone else whines about 'bad beats' and 'unfair matchups,' Ricky just shrugs and embraces the beautiful chaos. He's the zen master of fantasy football - if he wins, it's because the universe aligned. If he loses, it's because the universe has a sense of humor.",
                 author: "Children of the Corn"
             },
             {
                 text: "COMEDY CLUB - DON'T TAKE KINDLY",
-                story: "After three bad seasons in the league, Chet finally met his maker and was forced to...",
+                story: "After three seasons of spectacular fantasy failures, Chet was ceremoniously kicked out faster than a kicker in the 4th round. The league's version of 'three strikes and you're out,' except the strikes were entire seasons of embarrassment.",
                 author: "Don't Take Kindly"
             }
         ],
@@ -502,27 +502,27 @@ export const tShirts = [
         sayings: [
             {
                 text: "CHAT IS DEAD... THANKS CORBIN!",
-                story: "A chuckles mantra when he his bored and no one is chatting, he likes to blame Corbin.",
+                story: "Whenever the group chat goes quiet for more than 5 minutes, Chuckles emerges like a vampire at sunset to declare it dead and point fingers at Corbin. It's his Batman signal for attention, except instead of fighting crime, he's fighting silence.",
                 author: "Philly Cheesesteaks"
             },
             {
                 text: "MY TEAM SOCKS!",
-                story: "Dolphin Death down in the dumps about injuries and poor performances.... unfortunately english is not his first language.",
+                story: "In a moment of pure linguistic confusion, Dolphin Death declared his team 'socks' instead of 'sucks.' Given his team's performance, both statements were surprisingly accurate. Sometimes broken English captures the truth better than perfect grammar.",
                 author: "Dolphin Death"
             },
             {
                 text: "FRIDAY'S ARE NOT GOOD FOR ME",
-                story: "We all know Chuck can't make Fridays...",
+                story: "Chuck has the social calendar of a Victorian aristocrat - apparently Friday evenings are reserved for very important business that definitely isn't just watching Netflix in his pajamas. The league's most reliable excuse for missing every Friday gathering.",
                 author: "Philly Cheesesteaks"
             },
             {
                 text: "HATE THAT GUY",
-                story: "BNB instant response to Big Bad Brad joing the league. A start to the rivalry....",
+                story: "The moment Big Bad Brad joined the league, BNB's immediate reaction was pure, unfiltered hatred. No introductions needed, no warming up period - just instant rivalry. It was love at first sight, if love meant wanting to destroy someone's fantasy dreams.",
                 author: "Bad News Babymamas"
             },
             {
                 text: "I LOVE GREENVILLE, SOUTH CAROLINA",
-                story: "we all know!!",
+                story: "Steve Eager's love for Greenville, South Carolina burns brighter than a thousand suns. He's basically the city's unofficial tourism board, chamber of commerce, and welcome wagon all rolled into one enthusiastic human being. We get it, Steve. We ALL get it.",
                 author: "Steve Eager"
             },
             {
@@ -547,7 +547,7 @@ export const tShirts = [
             },
             {
                 text: "NOEL JANUSZEWSKI GOES 14-1",
-                story: "The best regualr season we have ever seen, so quicly followed by one of the worst playoff lost in the modern draft era.",
+                story: "Noel went 14-1 in the regular season like he was playing on rookie mode, then immediately crumbled in the playoffs like a stale cookie. It was the most spectacular collapse since the Hindenburg, but with more fantasy football tears.",
                 author: "North Korean Fighting Kims"
             },
             {
@@ -577,7 +577,7 @@ export const tShirts = [
         sayings: [
             {
                 text: "LEAGUE WINNER: PHILLYCHEESESTEAKS",
-                story: "B2B Champ.... what a run",
+                story: "Chuck went back-to-back like Jordan in the 90s, if Jordan also complained about his schedule and couldn't make Friday practices. Still managed to dominate the league while maintaining his mysterious Friday night commitments.",
                 author: "Philly Cheesesteaks"
             },
             {
@@ -587,7 +587,7 @@ export const tShirts = [
             },
             {
                 text: "BLAH BLAH BLAH... NEXT!",
-                story: "A great power move by the commisiner when the positivit czar disagrees with the rules",
+                story: "When the Positivity Czar tried to argue with a commissioner ruling, he got hit with the fantasy football equivalent of 'talk to the hand.' Some conversations end with compromise; this one ended with 'NEXT!'",
                 author: "GOLDEN REAPER"
             },
             {
@@ -597,12 +597,12 @@ export const tShirts = [
             },
             {
                 text: "I REALLY LIKE WHERE MY TEAM IS AT",
-                story: "**Seconds befoer disaster**- a classicconfident Corbin quote",
+                story: "Famous last words from the Oracle of Bad Takes. Like a meteorologist predicting sunshine right before a hurricane, Corbin's confidence is usually the first sign that everything is about to go spectacularly wrong.",
                 author: "North Korean Fighting Kims"
             },
             {
                 text: "WHO IS CARLOS?",
-                story: "cough cough James I mean Carlos, too busy with school papers for us to find out who he was.",
+                story: "The mysterious phantom manager who was allegedly 'too busy with school' to reveal his true identity. James pulled the ultimate fantasy football catfish by creating Carlos, then immediately abandoning him like a bad Tinder date.",
                 author: "Carlos"
             },
             {
@@ -632,12 +632,12 @@ export const tShirts = [
             },
             {
                 text: "GREAT JOB, BROOK",
-                story: "Cancel everything! Brooke may be in town.",
+                story: "The announcement that brought the league to a grinding halt. When Brooke graces us with her presence, apparently all fantasy football activities must cease. She's like the queen visiting a small village - everything stops.",
                 author: ""
             },
             {
                 text: "MIKE BOONE",
-                story: "BOONE!",
+                story: "The most enthusiastic celebration of a mediocre running back in fantasy football history. BNB screaming 'BOONE!' with the passion of a World Cup goal, despite Mike Boone averaging 2.3 yards per carry.",
                 author: "Bad News Babymamas"
             },
             {
@@ -667,7 +667,7 @@ export const tShirts = [
         sayings: [
             {
                 text: "LEAGUE WINNER - PLAXICO'S GUN-N-RUN",
-                story: "Nothing like selling your soul to the devil for a championship win....",
+                story: "Jon made a Faustian bargain with the fantasy football gods, trading his eternal soul for one championship ring. The devil probably got the better deal, but Jon got the trophy, so who's really winning here?",
                 author: "Plaxico's Gun n Run"
             },
             {
@@ -677,7 +677,7 @@ export const tShirts = [
             },
             {
                 text: "BRODIE'S SUNROOF",
-                story: "I was wondering why it was wet in here",
+                story: "The moment when Brodie discovered his sunroof had been giving him an unwanted shower all season. Mystery solved: it wasn't tears of fantasy football joy, it was just good old-fashioned precipitation.",
                 author: "Struggling"
             },
             {
@@ -692,7 +692,7 @@ export const tShirts = [
             },
             {
                 text: "THE BET",
-                story: "A legendary bet that kept Alpha male out of the league and Philly' to buy us shirts and say in the league",
+                story: "The wager that changed league history forever. Alpha Male bet his spot in the league, lost spectacularly, and got booted while Chuck got sentenced to buying everyone t-shirts. One man's exile became everyone else's free merch.",
                 author: "Philly Cheesesteaks"
             },
             {
@@ -727,17 +727,17 @@ export const tShirts = [
             },
             {
                 text: "6:30 MILE",
-                story: "Timbo two Jobs turned down $1k to run a 6:30 mile in front of us...... Good thing strava has record of him doing it!",
+                story: "Timbo turned down $1,000 to run a 6:30 mile in front of everyone, claiming he didn't need to prove anything. Then Strava immediately snitched on him with GPS evidence that he could absolutely do it. Technology: 1, Timbo's Humility: 0.",
                 author: ""
             },
             {
                 text: "GME 100K EOY",
-                story: "EOY, but which year??",
+                story: "Alpha Male's bold prediction that GameStop would hit $100K by end of year. The only question was which year - 2021? 2031? 2121? Still waiting for that moon landing, but his diamond hands remain unshaken.",
                 author: "ALPHA MALE SEAN"
             },
             {
                 text: "DUNLAP YOU FAT POS",
-                story: "He aint wrong",
+                story: "Sometimes the most brutal truths come wrapped in the simplest packages. Chuck delivered this roast with the efficiency of a surgical strike and the accuracy of a GPS missile. Dunlap never recovered.",
                 author: "Philly Cheesesteaks"
             },
             {
