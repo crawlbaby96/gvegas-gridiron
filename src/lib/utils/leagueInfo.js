@@ -532,7 +532,7 @@ export const tShirts = [
             },
             {
                 text: "THE LAW OFFICES OF WILLIAM D CORBIN",
-                story: "William Corbin's official title that became a running joke in the league, especially during trade negotiations and rule discussions.",
+                story: "The legal elite of saying 'It Depends.' Corbin's law practice specializes in working on fantasy football constitutions.",
                 author: "William Corbin"
             },
             {
@@ -642,7 +642,7 @@ export const tShirts = [
             },
             {
                 text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND GLOOMY",
-                story: "A touching sentiment about how the league provided joy and community during difficult times.",
+                story: "A heartfelt sentiment about how the league provided joy and community during difficult times, but updated to say dicks instead of degenerates because that's more accurate.",
                 author: "League Member"
             },
             {
@@ -672,7 +672,7 @@ export const tShirts = [
             },
             {
                 text: "RORY GOT MIXXED",
-                story: "A memorable moment involving Rory Hayes that became an instant classic in league lore.",
+                story: "Nothing tastes better than Jimmy Johns in Saginaw! This became a legendary saying when Rory's love for the sandwich shop became the stuff of league folklore.",
                 author: "Rory Hayes"
             },
             {
