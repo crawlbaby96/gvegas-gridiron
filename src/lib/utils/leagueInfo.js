@@ -377,7 +377,7 @@ export const hallOfFame = [
         id: 1,
         title: "The Golden Reaper's Dynasty",
         years: "2011-2014",
-        image: "/managers/james-avatar.png", // You can replace with actual images
+        image: "/managers/james-trio.png", // You can replace with actual images
         description: "James Figueroa's legendary run as the inaugural champion, establishing himself as the league's first dynasty. His strategic brilliance and consistent performance set the standard for excellence in G-Vegas Gridiron.",
         category: "Championship",
         featuredPlayer: null, // Can reference a player ID from Sleeper API
