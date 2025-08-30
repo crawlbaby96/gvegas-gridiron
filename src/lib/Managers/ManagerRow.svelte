@@ -1,9 +1,10 @@
 <script>
     import { goto } from "$app/navigation";
 	import { getDatesActive, getRosterIDFromManagerID, getTeamNameFromTeamManagers } from "$lib/utils/helperFunctions/universalFunctions";
+    import { getManagerAwardsSummary, formatAwardsSummary } from "$lib/utils/helperFunctions/managerAwardsSummary";
     import {dynasty} from "$lib/utils/leagueInfo"
 
-    export let manager, leagueTeamManagers, key;
+    export let manager, leagueTeamManagers, awards = [], key;
 
     let retired = false;
 
@@ -19,98 +20,78 @@
     }
 
     const commissioner = manager.managerID ? leagueTeamManagers.users[manager.managerID].is_owner : false;
+
+    // Calculate awards summary
+    $: awardsSummary = getManagerAwardsSummary(awards, rosterID, manager.managerID, leagueTeamManagers);
+    $: formattedAwards = formatAwardsSummary(awardsSummary);
 </script>
 
 <style>
     .manager {
         display: flex;
-        justify-content: left;
-        align-items: center;
-        padding: 1em 0;
-        background-color: var(--fff);
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5em;
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
-        background-position: 15% 50%;
-        margin: 0.5em 0;
-        border-radius: 2em;
+        border-radius: 1em;
         border: 1px solid var(--ccc);
-        box-shadow: 0 0 6px 0 var(--bbb);
+        box-shadow: 0 2px 8px 0 var(--bbb);
         cursor: pointer;
+        transition: all 0.2s ease;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .manager::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.1) 40%,
+            rgba(0, 0, 0, 0.6) 80%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+        z-index: 1;
     }
 
     .manager:hover {
-        box-shadow: 0 0 10px 0 bar(--g999);
-        background-color: bar(--eee);
+        box-shadow: 0 4px 16px 0 var(--g999);
+        transform: translateY(-2px);
     }
 
-    .photo {
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        vertical-align: middle;
-        margin-left: 1em;
-        box-shadow: 0 0 2px 1px var(--bbb);
+    .manager:hover::before {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.7) 80%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
     }
 
-    .name {
-        text-align: center;
-        display: inline-block;
-        color: var(--g555);
-        line-height: 1.2em;
-        margin-left: 1em;
-        font-weight: 700;
+    .councilOverlay {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        height: 50px;
+        width: 42px;
+        z-index: 2;
+        opacity: 0.9;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+        transition: all 0.3s ease;
     }
 
-    .team {
-        text-align: center;
-        display: inline-block;
-        font-style: italic;
-        line-height: 1.2em;
-        color: var(--g555);
-        font-weight: 300;
-        margin-left: 1em;
-    }
-
-    .spacer {
-        flex-grow: 1;
-    }
-
-    .info {
-        display: flex;
-    }
-
-    .infoSlot {
-        text-align: center;
-        margin: 0 0.5em;
-        width: 63px;
-    }
-
-    .infoIcon {
-        display: inline-flex;
-        height: 40px;
-        width: 40px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100%;
-        border: 1px solid #ccc;
-        overflow: hidden;
-        background-color: var(--fff);
-    }
-
-    .infoImg {
-        height: 30px;
-    }
-
-    .infoAnswer {
-        font-size: 0.8em;
-        color: var(--g555);
-        width: 63px;
-        text-align: center;
-        line-height: 1.2em;
-    }
-
-    .avatarHolder {
-        display: inline-flex;
-        position: relative;
+    .councilOverlay:hover {
+        opacity: 1;
+        transform: scale(1.1);
     }
 
     .commissionerBadge {
@@ -118,173 +99,312 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        bottom: -10px;
-        right: -10px;
-        height: 25px;
-        width: 25px;
+        top: 15px;
+        right: 15px;
+        height: 40px;
+        width: 40px;
         font-weight: 600;
-        border-radius: 15px;
+        font-size: 1.2em;
+        border-radius: 50%;
         background-color: var(--blueTwo);
-        border: 1px solid var(--blueOne);
+        border: 2px solid var(--fff);
         color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        z-index: 2;
     }
 
-	@media (max-width: 665px) {
-        .name {
-            font-size: 0.9em;
-            margin-left: 0.5em;
-        }
-
-        .team {
-            font-size: 0.8em;
-            margin-left: 0.5em;
-        }
+    .managerInfo {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        z-index: 2;
     }
 
-	@media (max-width: 595px) {
-        .manager {
-            padding: 0.5em 0;
-            margin: 0.3em 0;
-            border-radius: 1.5em;
-        }
-
-        .photo {
-            height: 30px;
-            width: 30px;
-            margin-left: 0.5em;
-        }
-
-        .commissionerBadge {
-            height: 15px;
-            width: 15px;
-            font-size: 0.8em;
-        }
-
-        .infoSlot {
-            text-align: center;
-            margin: 0 0.4em;
-            width: 56px;
-        }
-
-        .infoIcon {
-            height: 30px;
-            width: 30px;
-        }
-
-        .infoImg {
-            height: 25px;
-        }
-
-        .infoAnswer {
-            font-size: 0.7em;
-            width: 56px;
-        }
+    .awards {
+        font-size: 0.75em;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0.5em 0 1em;
+        line-height: 1.2em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3em;
     }
 
-    @media (max-width: 475px) {
-        .name {
-            font-size: 0.8em;
-            margin-left: 0.4em;
-        }
-
-        .team {
-            font-size: 0.7em;
-            margin-left: 0.4em;
-        }
-
-        .photo {
-            height: 25px;
-            width: 25px;
-        }
-
-        .infoSlot {
-            text-align: center;
-            margin: 0 0.4em;
-            width: 49px;
-        }
-
-        .infoIcon {
-            height: 25px;
-            width: 25px;
-        }
-
-        .infoImg {
-            height: 22px;
-        }
-
-        .infoAnswer {
-            font-size: 0.6em;
-            width: 49px;
-        }
+    .awardsIcon {
+        height: 14px;
+        width: 14px;
+        opacity: 0.9;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
     }
 
-    @media (max-width: 370px) {
-        .infoTeam {
-            display: none;
-        }
+    .noAwards {
+        opacity: 0.6;
+        font-style: italic;
+    }
+
+    .name {
+        font-size: 1.4em;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 0.3em;
+        line-height: 1.2em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .team {
+        font-style: italic;
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 1em;
+        font-size: 1em;
+        line-height: 1.2em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        gap: 0.8em;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+    }
+
+    .infoSlot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 50px;
+    }
+
+    .infoIcon {
+        display: flex;
+        height: 35px;
+        width: 35px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.2em;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+    }
+
+    .infoImg {
+        height: 22px;
+        width: 22px;
+        object-fit: contain;
+    }
+
+    .infoAnswer {
+        font-size: 0.7em;
+        color: #fff;
+        text-align: center;
+        line-height: 1.1em;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .question {
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Retired managers styling */
+    .retired::before {
+        background: linear-gradient(
+            to bottom,
+            rgba(100, 100, 100, 0.3) 0%,
+            rgba(100, 100, 100, 0.5) 40%,
+            rgba(50, 50, 50, 0.8) 80%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+    }
+
+    .retired {
+        filter: grayscale(50%);
+    }
+
+    @media (max-width: 520px) {
+        .manager {
+            padding: 1.2em;
+            height: 280px;
+        }
+
+        .commissionerBadge {
+            height: 35px;
+            width: 35px;
+            font-size: 1em;
+            top: 12px;
+            right: 12px;
+        }
+
+        .councilOverlay {
+            height: 45px;
+            width: 38px;
+            top: 12px;
+            left: 12px;
+        }
+
+        .name {
+            font-size: 1.2em;
+        }
+
+        .team {
+            font-size: 0.9em;
+        }
+
+        .awards {
+            font-size: 0.65em;
+            margin: 0.4em 0 0.8em;
+        }
+
+        .awardsIcon {
+            height: 12px;
+            width: 12px;
+        }
+
+        .infoIcon {
+            height: 32px;
+            width: 32px;
+        }
+
+        .infoImg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        .manager {
+            padding: 1em;
+            height: 250px;
+        }
+
+        .commissionerBadge {
+            height: 30px;
+            width: 30px;
+            font-size: 0.9em;
+            top: 10px;
+            right: 10px;
+        }
+
+        .councilOverlay {
+            height: 40px;
+            width: 34px;
+            top: 10px;
+            left: 10px;
+        }
+
+        .infoTeam {
+            display: none;
+        }
+
+        .info {
+            gap: 0.6em;
+        }
+
+        .name {
+            font-size: 1.1em;
+        }
+
+        .team {
+            font-size: 0.85em;
+        }
+
+        .awards {
+            font-size: 0.6em;
+            margin: 0.3em 0 0.7em;
+        }
+
+        .awardsIcon {
+            height: 11px;
+            width: 11px;
+        }
     }
 </style>
 
-<div class="manager" style="{retired ? "background-image: url(/retired.png); background-color: var(--ddd)": ""}" onclick={() => goto(`/manager?manager=${key}`)}>
-    <div class="avatarHolder">
-        <img class="photo" src="{manager.photo}" alt="{manager.name}" />
-        {#if commissioner}
-            <div class="commissionerBadge">
-                <span>C</span>
-            </div>
-        {/if}
-    </div>
-    <div class="name">{manager.name}</div>
-    <div class="team">{getTeamNameFromTeamManagers(leagueTeamManagers, rosterID, year)}</div>
-    <div class="spacer" />
-    <div class="info">
-        <!-- Favorite team (optional) -->
-        <div class="infoSlot infoTeam">
-            {#if manager.favoriteTeam}
-                <div class="infoIcon">
-                    <img class="infoImg" src="https://sleepercdn.com/images/team_logos/nfl/{manager.favoriteTeam}.png" alt="favorite team"/>
-                </div>
+<div class="manager {retired ? 'retired' : ''}" 
+     style="background-image: url('{manager.photo}')" 
+     onclick={() => goto(`/manager?manager=${key}`)}>
+    
+    {#if manager.council}
+        <img class="councilOverlay" src="/council-symbol.svg" alt="League Council Member" title="League Council Member" />
+    {/if}
+    
+    {#if commissioner}
+        <div class="commissionerBadge">
+            <span>C</span>
+        </div>
+    {/if}
+    
+    <div class="managerInfo">
+        <div class="name">{manager.name}</div>
+        <div class="team">{getTeamNameFromTeamManagers(leagueTeamManagers, rosterID, year)}</div>
+        
+        <div class="awards" class:noAwards={awardsSummary.totalMajorAwards === 0}>
+            {#if awardsSummary.totalMajorAwards > 0}
+                <img class="awardsIcon" src="/trophy.png" alt="Awards" />
+                {formattedAwards}
             {:else}
-                <div class="infoIcon question">
-                    <img class="infoImg" src="/managers/question.jpg" alt="favorite team"/>
-                </div>
+                {formattedAwards}
             {/if}
         </div>
-        <!-- Preferred contact -->
-        <div class="infoSlot">
-            {#if manager.preferredContact}
-                <div class="infoIcon">
-                    <img class="infoImg" src="/{manager.preferredContact}.png" alt="{manager.preferredContact}"/>
-                </div>
-                <div class="infoAnswer">
-                    {manager.preferredContact}
-                </div>
-            {:else}
-                <div class="infoIcon question">
-                    <img class="infoImg" src="/managers/question.jpg" alt="favorite team"/>
-                </div>
-            {/if}
-        </div>
-        <!-- Rebuild mode (optional and only displayed for dynasty leagues) -->
-        {#if dynasty}
-            <div class="infoSlot infoRebuild">
-                {#if manager.mode}
+        
+        <div class="info">
+            <!-- Favorite team (optional) -->
+            <div class="infoSlot infoTeam">
+                {#if manager.favoriteTeam}
                     <div class="infoIcon">
-                        <img class="infoImg" src="/{manager.mode.replace(' ', '%20')}.png" alt="win now or rebuild"/>
+                        <img class="infoImg" src="https://sleepercdn.com/images/team_logos/nfl/{manager.favoriteTeam}.png" alt="favorite team"/>
                     </div>
-                    <div class="infoAnswer">
-                        {manager.mode}
-                    </div>
+                    <div class="infoAnswer">Fav Team</div>
                 {:else}
                     <div class="infoIcon question">
                         <img class="infoImg" src="/managers/question.jpg" alt="favorite team"/>
                     </div>
+                    <div class="infoAnswer">Fav Team</div>
                 {/if}
             </div>
-        {/if}
+            
+            <!-- Preferred contact -->
+            <div class="infoSlot">
+                {#if manager.preferredContact}
+                    <div class="infoIcon">
+                        <img class="infoImg" src="/{manager.preferredContact}.png" alt="{manager.preferredContact}"/>
+                    </div>
+                    <div class="infoAnswer">
+                        {manager.preferredContact}
+                    </div>
+                {:else}
+                    <div class="infoIcon question">
+                        <img class="infoImg" src="/managers/question.jpg" alt="contact"/>
+                    </div>
+                    <div class="infoAnswer">Contact</div>
+                {/if}
+            </div>
+            
+            <!-- Rebuild mode (optional and only displayed for dynasty leagues) -->
+            {#if dynasty}
+                <div class="infoSlot infoRebuild">
+                    {#if manager.mode}
+                        <div class="infoIcon">
+                            <img class="infoImg" src="/{manager.mode.replace(' ', '%20')}.png" alt="win now or rebuild"/>
+                        </div>
+                        <div class="infoAnswer">
+                            {manager.mode}
+                        </div>
+                    {:else}
+                        <div class="infoIcon question">
+                            <img class="infoImg" src="/managers/question.jpg" alt="strategy"/>
+                        </div>
+                        <div class="infoAnswer">Strategy</div>
+                    {/if}
+                </div>
+            {/if}
+        </div>
     </div>
 </div>

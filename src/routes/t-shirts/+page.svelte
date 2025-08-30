@@ -128,12 +128,7 @@
                 </div>
                 
 
-                
-                <div class="modal-description">
-                    <h4>Description</h4>
-                    <p>{selectedShirt.description}</p>
-                </div>
-                
+
                 <div class="sayings-section">
                     <h4>All Sayings & Stories</h4>
                     <div class="sayings-grid">

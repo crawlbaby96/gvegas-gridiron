@@ -201,7 +201,7 @@
             case 10:
                 return award + 'th Place';
             case 'Champion':
-                return award
+                return 'Jeff Betz Memorial Trophy'
             case 'Second':
             case 'Third':
                 return award + ' Place'
