@@ -206,14 +206,14 @@ export const managers = [
       "bio": "Luke “Maverick” Brooks is a man of many talents, and he is average at every single one of those talents. He once took a top 3 drafted fantasy team and drove them into the bottom 4 where he had to fight for his life to survive this league and also his marriage. When he isn’t making his clients even wealthier, he is praying and fasting, RISE(ing) and running, and spending time with his wife, son, and soon to arrive daughter. If your team comes in the way of Maverick’s success, he’ll just tell you to, “Shut the hell up!”",
       "photo": "/managers/luke-avatar.png",
       "fantasyStart": "2018",
-      "favoriteTeam": "atl",
+      "favoriteTeam": "sf",
       "mode": null,
       "rival": {
         name: "Chuck Pace",
         link: null,
         image: "/managers/chuck-avatar-2.png",
       },
-      "favoritePlayer": "85",
+      "favoritePlayer": "4034",
       "valuePosition": "DE",
       "rookieOrVets": "Retired",
       "philosophy": "FAAB $ are the key to any investment portfolio",
@@ -266,7 +266,7 @@ export const managers = [
       "managerID": "827412517738393600",
       "name": "Elliot Figueroa",
       "location": "Greenville, South Carolina",
-      "bio": "Dolphin Death",
+      "bio": "I have been a member of the league since its inception. It has been fun to see all of us grow older. I am the oldest member of the league and there fore I claim the title of the wisest. I have a winning record and have won once and was very close to a second...by a few seconds.  'Congratulations Elliot' are words that still haunt me. I am a dolphin's fan since the 70's and Marino was my last dolphin hero.  Been married for almost 30 years and no grand kids yet...James? YNWA!!",
       "photo": "/managers/elliot-avatar.png",
       "fantasyStart": "2011",
       "favoriteTeam": "mia",
@@ -287,7 +287,7 @@ export const managers = [
       "managerID": "959954145530691584",
       "name": "Brad Reynolds",
       "location": "Wilmington, North Carolina",
-      "bio": "Toilet Bowl Bots 🚽",
+      "bio": "Welcome to the Bull City Bots’ profile, where we’ve learned that being good at fantasy football doesn’t always translate to making the playoffs. In our first season, we finished in the top half of scorers, and in our second season, we were the third highest scoring team—only to miss out on the playoffs thanks to some truly brutal matchup luck. But this year? We're finally going to break through. For the record, I’m a former high school football offensive coordinator—yes, I did know what I was doing, until my twin girls came along and made coaching a lot more complicated. So, I traded the sideline for fantasy football, where the only thing I have to manage is my roster. No more excuses—this is the year the Bull City Bots make their playoff push.",
       "photo": "/managers/brad-avatar.png",
       "fantasyStart": "2023",
       "council": true,
@@ -376,7 +376,7 @@ export const hallOfFame = [
     {
         id: 1,
         title: "The Golden Reaper's Dynasty",
-        years: "2011-2015",
+        years: "2011-2014",
         image: "/managers/james-avatar.png", // You can replace with actual images
         description: "James Figueroa's legendary run as the inaugural champion, establishing himself as the league's first dynasty. His strategic brilliance and consistent performance set the standard for excellence in G-Vegas Gridiron.",
         category: "Championship",
@@ -386,20 +386,20 @@ export const hallOfFame = [
     },
     {
         id: 2,
-        title: "The Comeback King",
-        years: "2018",
-        image: "/managers/chris-avatar.png",
-        description: "Crawlbaby's miraculous Monday Night Comeback victory that will forever be etched in league lore. Down by 40+ points going into Monday Night Football, he pulled off the greatest comeback in league history.",
+        title: "The Schwauagaahany Date",
+        years: "2023",
+        image: "/managers/jose-cardboard.png",
+        description: "Jose's punishment in 2023 was taking a cardboard cutout of former league member Schwauaaugahany. He bought it a great meal, enjoyed riveting conversation, and was the talk of Soby's. A legendary league moment",
         category: "Memorable Moment",
-        featuredPlayer: 1102, // Crawlbaby's favorite player
-        managerID: "738166858095673344", // Crawlbaby's manager ID
+        featuredPlayer: null, // Crawlbaby's favorite player
+        managerID: "826875538638512128", // Crawlbaby's manager ID
         inductedYear: 2025
     },
     {
         id: 3,
         title: "The Legal Eagle's Triumph",
         years: "2017, 2018",
-        image: "/managers/corbin-avatar.png",
+        image: "/managers/corbin-winning-league.png",
         description: "William Corbin's dual championship victories, proving that even the league's legal counsel can dominate on the gridiron. His analytical approach and strategic trading set him apart as one of the league's most respected managers.",
         category: "Championship",
         featuredPlayer: null,
