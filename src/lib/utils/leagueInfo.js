@@ -442,53 +442,53 @@ export const tShirts = [
         sayings: [
             {
                 text: "HOOK'EM",
-                story: "A classic Texas Longhorns reference that became a rallying cry in the league, possibly from a manager's college football allegiance or a memorable game.",
-                author: "League Member"
+                story: "During the GVegas olympics, The Golden Reaper victoriously lifted the trophy for the CFB '25 tournament absolutely running circles on the competition with the legendary Texas Longhorns.",
+                author: "Golden Reaper"
             },
             {
                 text: "CLEAR GLASS HOUSES",
-                story: "A witty reference to the saying 'people in glass houses shouldn't throw stones' - likely used when someone criticized another manager's team or decisions.",
-                author: "League Member"
+                story: "After a great shooting performance from Ranger Rick, he demonstrated the proper finger gun position for clearing glass houses. If Osama was in a glass house and not a cave watch out!!",
+                author: "Cocks on Top"
             },
             {
                 text: "I JUST LOVE TRADING",
-                story: "A declaration of passion for the trading aspect of fantasy football, capturing the excitement and strategy involved in making deals.",
-                author: "League Member"
+                story: "Immediately after the draft before any games have been played, Comrade wanted to start trading because he loves it. The only problem is he is on the bad end of some of the worst trades in league history.",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "POSITIVITY CZAR",
-                story: "A nickname for someone who always maintains a positive attitude in the league, even during tough losses or bad weeks.",
-                author: "League Member"
+                story: "We can always count on Chuckles for unsolicited positivity!!",
+                author: "Philly CheeseSteaks"
             },
             {
                 text: "WE BELIEVE IN DJ!",
-                story: "A show of support for a player named DJ, possibly during a crucial game or playoff situation where faith in the player paid off.",
-                author: "League Member"
+                story: "Following what looked like a disastrous draft for DJ, he asked The Golden Reaper if it was as bad as everyone was saying. The Golden Reaper confirmed it. As DJ started to win, we couldn't help but affirm our undying belief in his great team.",
+                author: "Golden Reaper"
             },
             {
                 text: "GOD GIVES HIS TOUGHEST BATTLES TO HIS STRONGEST SOLDIERS",
-                story: "A motivational quote that became relevant during a particularly challenging season or playoff run, inspiring perseverance.",
-                author: "League Member"
+                story: "Libby's words of encouragement to the positivity Czar that his first round pick CMC, was going to IR.",
+                author: "Libby McLovin"
             },
             {
                 text: "$85 ALLEN LAZARD",
-                story: "A reference to a specific auction bid involving Allen Lazard, likely a memorable moment in the draft or a trade that became legendary.",
-                author: "League Member"
+                story: "Nothing like spending the majority of your FAAB on 1 player that you dropped 2 days earlier....",
+                author: "Rogue Broncos"
             },
             {
                 text: "I REALLY LIKE ICEMAN'S DRAFT",
-                story: "A compliment to Iceman's draft strategy, acknowledging his skill in building a competitive roster through the draft process.",
-                author: "League Member"
+                story: "Much like Jim Cramer, inverse corbin is a good leading indicator. So you really don't want to hear this from Corbins mouth.",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "BETTER TO BE LUCKY THAN GOOD",
-                story: "A classic fantasy football philosophy that acknowledges the role of luck in the game, often used when someone wins despite questionable decisions.",
-                author: "League Member"
+                story: "Corn's end of season reflection on the reality of fantasy football. while other talk about how unfair it is. ricky embrasses the rng of fantasy football.",
+                author: "Children of the Corn"
             },
             {
-                text: "COMEDY CLUB - DONTTAKEKINDLY",
-                story: "A special mention for donttakekindly, possibly for their sense of humor or memorable one-liners that kept the league entertained throughout the season.",
-                author: "donttakekindly"
+                text: "COMEDY CLUB - DON'T TAKE KINDLY",
+                story: "After three bad seasons in the league, Chet finally met his maker and was forced to...",
+                author: "Don't Take Kindly"
             }
         ],
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -502,67 +502,67 @@ export const tShirts = [
         sayings: [
             {
                 text: "CHAT IS DEAD... THANKS CORBIN!",
-                story: "A memorable moment when the league chat went silent, allegedly due to Corbin's actions. This became an instant classic saying that perfectly captures the league's sense of humor.",
-                author: "League Chat"
+                story: "A chuckles mantra when he his bored and no one is chatting, he likes to blame Corbin.",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "MY TEAM SOCKS!",
-                story: "A declaration of team pride that became a rallying cry for managers throughout the season. The enthusiasm behind this simple phrase made it unforgettable.",
-                author: "League Member"
+                story: "Dolphin Death down in the dumps about injuries and poor performances.... unfortunately english is not his first language.",
+                author: "Dolphin Death"
             },
             {
                 text: "FRIDAY'S ARE NOT GOOD FOR ME",
-                story: "A relatable sentiment that resonated with many league members, especially during the busy work week leading up to Sunday football.",
-                author: "League Member"
+                story: "We all know Chuck can't make Fridays...",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "HATE THAT GUY",
-                story: "A universal feeling in fantasy football when a rival manager makes a great move or gets lucky. This simple phrase captured the competitive spirit of the league.",
-                author: "League Member"
+                story: "BNB instant response to Big Bad Brad joing the league. A start to the rivalry....",
+                author: "Bad News Babymamas"
             },
             {
                 text: "I LOVE GREENVILLE, SOUTH CAROLINA",
-                story: "A random declaration of love for Greenville that became an inside joke in the league. The story behind this one remains a mystery.",
-                author: "League Member"
+                story: "we all know!!",
+                author: "Steve Eager"
             },
             {
                 text: "CHURCHED AND UNCHURCHED POWER RANKINGS",
-                story: "A humorous take on power rankings that divided teams into 'churched' and 'unchurched' categories, adding a unique twist to weekly rankings.",
-                author: "League Commissioner"
+                story: "A great list helping us monitor the spiritual wellbeing of our fellow brothers in Christ.",
+                author: "Maverick"
             },
             {
                 text: "THE LAW OFFICES OF WILLIAM D CORBIN",
-                story: "The legal elite of saying 'It Depends.' Corbin's law practice specializes in working on fantasy football constitutions.",
-                author: "William Corbin"
+                story: "The Legal Elite of saying \"It Depends\"",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "SUNDEEP AND COOPER ARE HERE!",
-                story: "A celebration of league members who made an appearance, becoming a memorable moment that was immortalized on the shirt.",
-                author: "League Member"
+                story: "The marking of the the birth of future league members.",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "DUKE 28 CLEMSON 7",
-                story: "A college football score that became significant in the league, possibly related to a bet or a memorable game that affected fantasy outcomes.",
-                author: "College Football"
+                story: "The lost bet that lead to a rigged setup and maybe an engagment in due time.",
+                author: "Libby McLovin"
             },
             {
                 text: "NOEL JANUSZEWSKI GOES 14-1",
-                story: "Noel's incredible regular season record that earned him recognition on the league shirt. A dominant performance that couldn't be ignored.",
-                author: "Noel Januszewski"
+                story: "The best regualr season we have ever seen, so quicly followed by one of the worst playoff lost in the modern draft era.",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "SD GIRL AND HER CHRISTMAS GIFTS",
-                story: "A memorable story involving Christmas gifts that became a league legend. The details remain part of league lore.",
-                author: "SD Girl"
+                story: "When asked about gifts for Corbin and SD first christmas a classic response of \" Already got her flowers last Monday\".",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "BEST.WEEKEND.EVER.",
-                story: "A declaration that captured the feeling of an amazing league weekend, possibly during the draft or a particularly exciting week of games.",
-                author: "League Member"
+                story: "In rememberance of another awesome draft weekend!",
+                author: ""
             },
             {
                 text: "GVEGAS GOT TALENT: BILLY BUCK - BACK TO BACK CHAMP",
-                story: "Billy Buck's incredible achievement of winning back-to-back championships, earning him a special mention on the league shirt and solidifying his place in league history.",
+                story: "Not one but two punsihments. A great rendition of the legendary Steve Eager song \"Greenville\"",
                 author: "Billy Buck"
             }
         ],
@@ -577,82 +577,82 @@ export const tShirts = [
         sayings: [
             {
                 text: "LEAGUE WINNER: PHILLYCHEESESTEAKS",
-                story: "Chuck Pace's championship victory in 2022, earning him the title of league winner and a place on the shirt.",
-                author: "Chuck Pace"
+                story: "B2B Champ.... what a run",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "THEY LANCE 'EM, I LAMINATE 'EM",
-                story: "A memorable quote that became a league catchphrase, possibly related to a specific game or player performance.",
-                author: "League Member"
+                story: "",
+                author: "North Korean Fighting Kims"
             },
             {
-                text: "BLAH BLAH BLAH... DIDN'T BEFORE... MEAT",
-                story: "A humorous quote that captured the league's attention, likely from a draft or trade discussion.",
-                author: "League Member"
+                text: "BLAH BLAH BLAH... NEXT!",
+                story: "A great power move by the commisiner when the positivit czar disagrees with the rules",
+                author: "GOLDEN REAPER"
             },
             {
                 text: "KUZMA'S KORNER",
-                story: "A reference to a specific area or strategy, possibly named after a player or manager.",
-                author: "League Member"
+                story: "",
+                author: ""
             },
             {
-                text: "\"I REALLY LIKE WHERE MY TEAM IS AT\"",
-                story: "A confident declaration about team status that became memorable in league lore.",
-                author: "League Member"
+                text: "I REALLY LIKE WHERE MY TEAM IS AT",
+                story: "**Seconds befoer disaster**- a classicconfident Corbin quote",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "WHO IS CARLOS?",
-                story: "A mysterious question that became an inside joke in the league, possibly about an unknown player or person.",
-                author: "League Member"
+                story: "cough cough James I mean Carlos, too busy with school papers for us to find out who he was.",
+                author: "Carlos"
             },
             {
                 text: "DON'T GIVE UP!",
-                story: "A motivational message that resonated with league members during challenging times.",
-                author: "League Member"
+                story: "NGU!!",
+                author: ""
             },
             {
                 text: "SHOULDN'T HAVE TRADED KELCE",
-                story: "A regretful statement about trading Travis Kelce, highlighting the importance of keeping star players.",
-                author: "League Member"
+                story: "**Seconds befoer disaster**- a classicconfident Corbin quote",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "KING OF THE PREMIER",
-                story: "A title given to someone who dominated the premier league or division.",
-                author: "League Member"
+                story: "",
+                author: ""
             },
             {
                 text: "LAST PLACE BOWL",
-                story: "The annual competition for teams at the bottom of the standings, a league tradition.",
-                author: "League Tradition"
+                story: "",
+                author: ""
             },
             {
                 text: "LARRY'S SHERIFFS CLOWNS FAN",
-                story: "A reference to Larry's team name and his fandom, becoming a memorable league moment.",
-                author: "Larry"
+                story: "",
+                author: ""
             },
             {
                 text: "GREAT JOB, BROOK",
-                story: "A compliment to Brook for an impressive performance or achievement.",
-                author: "League Member"
+                story: "Cancel everything! Brooke may be in town.",
+                author: ""
             },
             {
                 text: "MIKE BOONE",
-                story: "A player reference that became significant, possibly due to a key performance or trade.",
-                author: "League Member"
+                story: "BOONE!",
+                author: "Bad News Babymamas"
             },
             {
                 text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND GLOOMY",
-                story: "A heartfelt sentiment about how the league provided joy and community during difficult times, but updated to say dicks instead of degenerates because that's more accurate.",
-                author: "League Member"
+                story: "A testimony to the group of toxic dicks we are",
+                author: "Rogue Broncos"
             },
             {
-                text: "RIDE",
-                story: "A simple but powerful word that became a rallying cry for the league.",
-                author: "League Member"
+                text: "RISE",
+                story: "RISE",
+                author: "Maverick"
             },
             {
                 text: "SCHWARZENEGGER TATE: BILLY BUCK",
-                story: "A nickname for Billy Buck that combined Arnold Schwarzenegger with a player name, becoming legendary.",
+                story: "A nice date with an ever nicer cutout",
                 author: "Billy Buck"
             }
         ],
@@ -667,88 +667,88 @@ export const tShirts = [
         sayings: [
             {
                 text: "LEAGUE WINNER - PLAXICO'S GUN-N-RUN",
-                story: "Jon Egan's championship victory in 2021 with his team 'Plaxico's Gun n Run', earning him the league title.",
-                author: "Jon Egan"
+                story: "Nothing like selling your soul to the devil for a championship win....",
+                author: "Plaxico's Gun n Run"
             },
             {
                 text: "RORY GOT MIXXED",
-                story: "Nothing tastes better than Jimmy Johns in Saginaw! This became a legendary saying when Rory's love for the sandwich shop became the stuff of league folklore.",
-                author: "Rory Hayes"
+                story: "",
+                author: "Rogue Broncos"
             },
             {
                 text: "BRODIE'S SUNROOF",
-                story: "A reference to Brodie's car or a memorable incident involving a sunroof that became legendary.",
-                author: "Brodie"
+                story: "I was wondering why it was wet in here",
+                author: "Struggling"
             },
             {
                 text: "KICKERGATE",
-                story: "A controversy or memorable moment involving kickers that became known as 'Kickergate'.",
-                author: "League Scandal"
+                story: "",
+                author: "ALPHA MALE SEAN"
             },
             {
                 text: "LINEUPGATE",
-                story: "Another league controversy, this time involving lineup decisions that caused drama.",
-                author: "League Scandal"
+                story: "",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "THE BET",
-                story: "A significant bet or wager made during the season that became memorable.",
-                author: "League Members"
+                story: "A legendary bet that kept Alpha male out of the league and Philly' to buy us shirts and say in the league",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "GODSPEED TIMBO",
-                story: "A farewell or tribute to Timbo, possibly related to his departure or a significant moment.",
-                author: "League Member"
+                story: "",
+                author: "ALPHA MALE SEAN"
             },
             {
                 text: "LITTLE BEAR",
-                story: "A nickname or reference that became significant in the league that season.",
-                author: "League Member"
+                story: "",
+                author: ""
             },
             {
                 text: "STROKEGATE",
-                story: "Another 'gate' controversy, this time involving a stroke-related incident or reference.",
-                author: "League Scandal"
+                story: "",
+                author: "ALPHA MALE SEAN"
             },
             {
                 text: "400 HUNDO",
-                story: "A reference to $400, possibly from a bet, trade, or league fee that became memorable.",
-                author: "League Member"
+                story: "",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "MONDAY NIGHT MIRACLE 2.0",
-                story: "A second edition of a Monday Night Miracle, likely involving a dramatic comeback or performance.",
-                author: "League Member"
+                story: "",
+                author: "GOLDEN REAPER"
             },
             {
                 text: "COOPERGATE",
-                story: "Another controversy involving someone named Cooper that became part of league lore.",
-                author: "League Scandal"
+                story: "",
+                author: "ALPHA MALE SEAN"
             },
             {
                 text: "6:30 MILE",
-                story: "A reference to a 6:30 mile time, possibly from a bet or challenge involving running.",
-                author: "League Member"
+                story: "Timbo two Jobs turned down $1k to run a 6:30 mile in front of us...... Good thing strava has record of him doing it!",
+                author: ""
             },
             {
                 text: "GME 100K EOY",
-                story: "A reference to GameStop stock and a prediction about reaching $100K by end of year.",
-                author: "League Member"
+                story: "EOY, but which year??",
+                author: "ALPHA MALE SEAN"
             },
             {
                 text: "DUNLAP YOU FAT POS",
-                story: "A memorable quote directed at Dunlap, possibly from a heated moment or game.",
-                author: "League Member"
+                story: "He aint wrong",
+                author: "Philly Cheesesteaks"
             },
             {
                 text: "STATGATE",
-                story: "Another controversy, this time involving statistics or stat corrections.",
-                author: "League Scandal"
+                story: "",
+                author: "Maverick"
             },
             {
                 text: "NUKEGATE",
-                story: "A controversy involving 'Nuke' or DeAndre Hopkins that became memorable.",
-                author: "League Scandal"
+                story: "",
+                author: "ALPHA MALE SEAN"
             }
         ],
         description: "The 2021 edition featuring Jon Egan's championship and the most memorable moments, controversies, and sayings from that season."
