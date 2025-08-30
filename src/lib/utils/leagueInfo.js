@@ -146,9 +146,9 @@ export const managers = [
       "favoriteTeam": "was",
       "mode": null,
       "rival": {
-        name: "Rory Hayes",
+        name: "James Figueroa",
         link: null,
-        image: "/managers/rory-avatar.png",
+        image: "/managers/james-avatar.png",
       },
       "favoritePlayer": 69,
       "valuePosition": "WR",
@@ -581,19 +581,19 @@ export const tShirts = [
                 author: "Philly Cheesesteaks"
             },
             {
-                text: "THEY LANCE 'EM, I LAMINATE 'EM",
-                story: "",
-                author: "North Korean Fighting Kims"
+                text: "TREY LANCE TOP 5 FANTASY QB",
+                story: "The boldest fantasy football prediction since someone called the Browns a dynasty. Trey Lance was going to revolutionize fantasy football, according to someone who clearly never watched him play.",
+                author: "Optimistic Dreamer"
             },
             {
-                text: "BLAH BLAH BLAH... NEXT!",
+                text: "BLAH BLAH BLAH...SEEN IT BEFORE...NEXT!",
                 story: "When the Positivity Czar tried to argue with a commissioner ruling, he got hit with the fantasy football equivalent of 'talk to the hand.' Some conversations end with compromise; this one ended with 'NEXT!'",
                 author: "GOLDEN REAPER"
             },
             {
-                text: "KUZMA'S KORNER",
-                story: "",
-                author: ""
+                text: "#CORRUPTCOMMISH",
+                story: "When the conspiracy theories start flying and someone needs to blame the commissioner for their terrible fantasy luck. #CorruptCommish became the rallying cry for every suspicious stat correction and questionable ruling.",
+                author: "Disgruntled Manager"
             },
             {
                 text: "I REALLY LIKE WHERE MY TEAM IS AT",
@@ -606,42 +606,42 @@ export const tShirts = [
                 author: "Carlos"
             },
             {
-                text: "DON'T GIVE UP!",
-                story: "NGU!!",
-                author: ""
+                text: "GG1.0 LIVE Q&A",
+                story: "The groundbreaking interactive session where league members could ask burning questions live. Revolutionary concept: actually talking to each other about fantasy football instead of just trash talking in the group chat.",
+                author: "Tech Innovation Team"
             },
             {
-                text: "SHOULDN'T HAVE TRADED KELCE",
+                text: "I SHOULDN'T HAVE TRADED KELCE",
                 story: "**Seconds befoer disaster**- a classicconfident Corbin quote",
                 author: "North Korean Fighting Kims"
             },
             {
-                text: "KING OF THE PREMIER",
-                story: "",
+                text: "KING OF THE PRESSER",
+                story: "The undisputed champion of press conferences, delivering fantasy football hot takes with the confidence of a Super Bowl MVP. Every statement delivered with authority, regardless of actual knowledge.",
+                author: "Media Relations Expert"
+            },
+            {
+                text: "LIBBY BLACK MAGIC",
+                story: "Libby's supernatural ability to pull victory from the jaws of defeat using what can only be described as dark arts. When logic fails and statistics crumble, Libby's black magic takes over.",
+                author: "Libby McLovin"
+            },
+            {
+                text: "JAMES...MASSIVE CLEMSON FAN",
+                story: "James's unwavering devotion to Clemson is legendary, matching his fantasy football commissioner skills. He bleeds orange and purple almost as much as he bleeds fantasy football statistics.",
+                author: "James Figueroa"
+            },
+            {
+                text: "GREAT JOB...BUDDY",
+                story: "The passive-aggressive pat on the back that says everything and nothing at the same time. 'Great job...buddy' - the fantasy football equivalent of 'bless your heart.'",
                 author: ""
             },
             {
-                text: "LAST PLACE BOWL",
-                story: "",
-                author: ""
-            },
-            {
-                text: "LARRY'S SHERIFFS CLOWNS FAN",
-                story: "",
-                author: ""
-            },
-            {
-                text: "GREAT JOB, BROOK",
-                story: "The announcement that brought the league to a grinding halt. When Brooke graces us with her presence, apparently all fantasy football activities must cease. She's like the queen visiting a small village - everything stops.",
-                author: ""
-            },
-            {
-                text: "MIKE BOONE",
+                text: "MIKE BOONE!",
                 story: "The most enthusiastic celebration of a mediocre running back in fantasy football history. BNB screaming 'BOONE!' with the passion of a World Cup goal, despite Mike Boone averaging 2.3 yards per carry.",
                 author: "Bad News Babymamas"
             },
             {
-                text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND GLOOMY",
+                text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND SNOWY",
                 story: "A testimony to the group of toxic dicks we are",
                 author: "Rogue Broncos"
             },
@@ -651,7 +651,7 @@ export const tShirts = [
                 author: "Maverick"
             },
             {
-                text: "SCHWARZENEGGER TATE: BILLY BUCK",
+                text: "SCHWAUGHNNN DATE: BILLY BUCK",
                 story: "A nice date with an ever nicer cutout",
                 author: "Billy Buck"
             }
