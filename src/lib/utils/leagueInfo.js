@@ -378,7 +378,7 @@ export const hallOfFame = [
         title: "The Golden Reaper's Dynasty",
         years: "2011-2014",
         image: "/managers/james-trio.png", // You can replace with actual images
-        description: "James Figueroa's legendary run as the inaugural champion, establishing himself as the league's first dynasty. His strategic brilliance and consistent performance set the standard for excellence in G-Vegas Gridiron.",
+        description: "James Figueroa's legendary run as the inaugural champion, establishing himself as the league's first dynasty. His strategic brilliance and consistent performance set the standard for excellence in G-Vegas Gridiron. When leading a dynasty, it helps to have 6 farm teams you are leading.",
         category: "Championship",
         featuredPlayer: null, // Can reference a player ID from Sleeper API
         managerID: "450350679567888384", // James Figueroa's manager ID
@@ -388,7 +388,7 @@ export const hallOfFame = [
         id: 2,
         title: "The Schwauagaahany Date",
         years: "2023",
-        image: "/managers/jose-cardboard.png",
+        image: "/managers/Jose-cardboard.png",
         description: "Jose's punishment in 2023 was taking a cardboard cutout of former league member Schwauaaugahany. He bought it a great meal, enjoyed riveting conversation, and was the talk of Soby's. A legendary league moment",
         category: "Memorable Moment",
         featuredPlayer: null, // Crawlbaby's favorite player
@@ -399,7 +399,7 @@ export const hallOfFame = [
         id: 3,
         title: "The Legal Eagle's Triumph",
         years: "2017, 2018",
-        image: "/managers/corbin-winning-league.png",
+        image: "/managers/Corbin-Winning-League.png",
         description: "William Corbin's dual championship victories, proving that even the league's legal counsel can dominate on the gridiron. His analytical approach and strategic trading set him apart as one of the league's most respected managers.",
         category: "Championship",
         featuredPlayer: null,
@@ -410,7 +410,7 @@ export const hallOfFame = [
         id: 4,
         title: "Steve Eager Opens 2023 Draft",
         years: "2023",
-        image: "/t-shirts/steve-eager-draft.png",
+        image: "/t-shirts/steve-eager-draft.jpg",
         description: "Steve was kind enough to record a legendary video to kick off the 2023 fantasy draft and cemented himself as a Gvegas legend.",
         category: "Memorable Moment",
         featuredPlayer: null,
