@@ -1,3 +1,4 @@
+
 /*   STEP 1   */
 export const leagueID = "1059513476260966400"; // your league ID
 export const leagueName = "Gvegas Gridiron"; // your league name
@@ -54,7 +55,7 @@ export const managers = [
       "managerID": "448551108936200192",
       "name": "William Corbin, J.D.",
       "location": "Tigerville, South Carolina",
-      "bio": "DPRK Corn Cob Kims",
+      "bio": "Did your greedy cousin get your dad with dementia to change his will at the last second to cut you out? Call the law offices of William D. Corbin! I may not have a chair that was made in the 21st century, but I can help you get what is rightfully yours. Outside of work, I'm the league's most obnoxious Clemson fan, a carrier of weaponized autism, host of the Corbin Compound, king of random players that will never do anything, and commentator on pretty much anything you ask my opinion on (no guarantee that my thoughts are accurate, though).",
       "photo": "/managers/corbin-avatar.png",
       "fantasyStart": "2013",
       "favoriteTeam": "car",
