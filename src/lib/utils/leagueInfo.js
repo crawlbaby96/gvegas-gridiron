@@ -582,8 +582,8 @@ export const tShirts = [
             },
             {
                 text: "TREY LANCE TOP 5 FANTASY QB",
-                story: "The boldest fantasy football prediction since someone called the Browns a dynasty. Trey Lance was going to revolutionize fantasy football, according to someone who clearly never watched him play.",
-                author: "Optimistic Dreamer"
+                story: "A classic Corbin pick that went so spectacularly wrong it earned him the coveted Mostert Award. When your QB prediction is so bad it becomes legendary, you know you've achieved something special.",
+                author: "North Korean Fighting Kims"
             },
             {
                 text: "BLAH BLAH BLAH...SEEN IT BEFORE...NEXT!",
@@ -592,8 +592,8 @@ export const tShirts = [
             },
             {
                 text: "#CORRUPTCOMMISH",
-                story: "When the conspiracy theories start flying and someone needs to blame the commissioner for their terrible fantasy luck. #CorruptCommish became the rallying cry for every suspicious stat correction and questionable ruling.",
-                author: "Disgruntled Manager"
+                story: "When nepotism meets fantasy football, the hashtag was born. Nothing says 'fair and balanced' like keeping it in the family.",
+                author: "Suspicious League Members"
             },
             {
                 text: "I REALLY LIKE WHERE MY TEAM IS AT",
@@ -607,8 +607,8 @@ export const tShirts = [
             },
             {
                 text: "GG1.0 LIVE Q&A",
-                story: "The groundbreaking interactive session where league members could ask burning questions live. Revolutionary concept: actually talking to each other about fantasy football instead of just trash talking in the group chat.",
-                author: "Tech Innovation Team"
+                story: "Sarah coming into the lions den (or at least we think we are lions) to take on our questions. A legendary moment for James and her relationship - nothing says 'true love' like subjecting your girlfriend to fantasy football interrogation.",
+                author: "James and Sarah"
             },
             {
                 text: "I SHOULDN'T HAVE TRADED KELCE",
@@ -617,8 +617,8 @@ export const tShirts = [
             },
             {
                 text: "KING OF THE PRESSER",
-                story: "The undisputed champion of press conferences, delivering fantasy football hot takes with the confidence of a Super Bowl MVP. Every statement delivered with authority, regardless of actual knowledge.",
-                author: "Media Relations Expert"
+                story: "Children of the Corn takes the crown for his press conferences, except when he is in an airport. Ricky's media mastery knows no bounds, unless there's a departure gate involved - then all bets are off.",
+                author: "Children of the Corn"
             },
             {
                 text: "LIBBY BLACK MAGIC",
@@ -627,7 +627,7 @@ export const tShirts = [
             },
             {
                 text: "JAMES...MASSIVE CLEMSON FAN",
-                story: "James's unwavering devotion to Clemson is legendary, matching his fantasy football commissioner skills. He bleeds orange and purple almost as much as he bleeds fantasy football statistics.",
+                story: "This closeted Clemson fan used USC as a beard for so long, but we all know where the true fandom lives. James finally came out of the orange and purple closet - no more hiding behind Gamecock feathers.",
                 author: "James Figueroa"
             },
             {
@@ -642,7 +642,7 @@ export const tShirts = [
             },
             {
                 text: "THIS LEAGUE WAS THE BRIGHT LIGHT WHEN THINGS GOT DARK AND SNOWY",
-                story: "A testimony to the group of toxic dicks we are",
+                story: "The good part of this league where we are more than a bunch of toxic dicks. Sometimes, beneath all the trash talk and savage roasts, there's actually genuine friendship and support. Who knew?",
                 author: "Rogue Broncos"
             },
             {
@@ -672,7 +672,7 @@ export const tShirts = [
             },
             {
                 text: "RORY GOT MIXXED",
-                story: "",
+                story: "Jimmy Johns tastes the best in Saginaw, MI. Rory's passionate declaration about the superior quality of submarine sandwiches in a specific Michigan city became instant league legend.",
                 author: "Rogue Broncos"
             },
             {
