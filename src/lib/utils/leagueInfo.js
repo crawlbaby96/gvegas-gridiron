@@ -139,7 +139,7 @@ export const managers = [
       "managerID": "738166858095673344",
       "name": "Chris Rawlings",
       "location": "Greer, South Carolina",
-      "bio": "Monday Night Comeback - You already know bout me",
+      "bio": "As a founding member of the league, my journey has been nothing short of legendary—for all the wrong reasons. After a stretch of brutal seasons, I was actually kicked out, only to make a triumphant return, battle-tested and ready to rock. I may hold the league record for most losses (with the 3rd most games played to prove it), but hey, resilience is my true stat. Along the way, I've managed to snag two division titles and a 3rd-place finish, proving I can still swing with the best of them. My team name history tells the saga best: starting as Team Rawlings, then evolving through the RGIII era—RGIII is a Boss → RGIII is Mediocre → RGIII = Practice Squad—before spiraling into YOU LIKE THAT? YOU LIKE THAT?, I'm in a Kirkfuffle, Monday Night Comeback, a brief detour to 13 Waffles, and finally back to Monday Night Comeback. Speaking of waffles—when the league dished out the infamous Waffle House punishment, I put up a performance for the ages: 13 waffles in 11 hours. It wasn't pretty, but it was gritty. Now, with all that history behind me and my first championship still looming, I'm hungrier than ever—this time for a trophy, not waffles.",
       "photo": "/managers/chris-avatar.png",
       "fantasyStart": 2011,
       "council": true,
