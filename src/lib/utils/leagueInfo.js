@@ -1,5 +1,5 @@
 /*   STEP 1   */
-export const leagueID = "1059513476260966400"; // your league ID
+export const leagueID = "1185988161254850560"; // your league ID- this needs to be updated yearly new ID
 export const leagueName = "Gvegas Gridiron"; // your league name
 export const dues = 12; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
@@ -155,7 +155,7 @@ export const managers = [
       "rookieOrVets": "Rookies",
       "philosophy": "Win the draft, win the league",
       "tradingScale": 6,
-      "preferredContact": "Sleeper",
+      "preferredContact": "Text",
     },
     {
       "managerID": "826875091739602944",
@@ -171,7 +171,7 @@ export const managers = [
         link: null,
         image: "/managers/noel-avatar.png",
       },
-      "favoritePlayer": "648",
+      "favoritePlayer": "1234",
       "valuePosition": "RB",
       "rookieOrVets": "Vets",
       "philosophy": "If you believe it, you can achieve it",
