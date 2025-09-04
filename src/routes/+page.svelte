@@ -1,238 +1,235 @@
 <script>
+	import LinearProgress from '@smui/linear-progress';
+	import { getNflState, leagueName, getAwards, getLeagueTeamManagers, homepageText, managers, gotoManager, enableBlog, waitForAll } from '$lib/utils/helper';
+	import { Transactions, PowerRankings, HomePost } from '$lib/components';
+	import { getAvatarFromTeamManagers, getTeamFromTeamManagers } from '$lib/utils/helperFunctions/universalFunctions';
 
-  import { homepageText, getNews, enableBlog, getBlogPosts, getLeagueTeamManagers, getLeagueMatchups, loadPlayers, waitForAll } from '$lib/utils/helper';
-  import { onMount } from 'svelte';
-  import News from '$lib/News/index.svelte';
-  import HomePost from '$lib/BlogPosts/HomePost.svelte';
-  import Matchup from '$lib/Matchups/Matchup.svelte';
-  import LinearProgress from '@smui/linear-progress';
-
-  // League page data
-  let newsData = null;
-  let blogData = null;
-  let leagueTeamManagersData = null;
-  let matchupsData = null;
-  let playersData = null;
-  let players = null;
-  let matchupWeeks = null;
-  let year = null;
-  let week = null;
-  let regularSeasonLength = null;
-  let currentMatchups = [];
-  let loading = true;
-
-  onMount(async () => {
-    try {
-      // Load data for league page
-      const promises = [
-        getNews(null),
-        getLeagueTeamManagers(),
-        getLeagueMatchups(),
-        loadPlayers(null)
-      ];
-      
-      if (enableBlog) {
-        promises.push(getBlogPosts(null));
-      }
-      
-      const results = await waitForAll(...promises);
-      newsData = results[0];
-      leagueTeamManagersData = results[1];
-      matchupsData = results[2];
-      playersData = results[3];
-      
-      if (enableBlog) {
-        blogData = results[4];
-      }
-      
-      // Process matchups data
-      if (matchupsData) {
-        matchupWeeks = matchupsData.matchupWeeks;
-        year = matchupsData.year;
-        week = matchupsData.week;
-        regularSeasonLength = matchupsData.regularSeasonLength;
-        
-        // Extract current week's matchups
-        if (matchupWeeks && week && matchupWeeks[week - 1]) {
-          const currentWeekData = matchupWeeks[week - 1];
-          currentMatchups = [];
-          for (const key in currentWeekData.matchups) {
-            currentMatchups.push(currentWeekData.matchups[key]);
-          }
-        }
-      }
-      
-      // Process players data
-      if (playersData) {
-        players = playersData.players;
-      }
-      
-      loading = false;
-    } catch (error) {
-      console.error('Error loading homepage data:', error);
-      // Set loading to false even if there's an error so the page can still display
-      loading = false;
-      // Set empty defaults
-      newsData = { articles: [] };
-      if (enableBlog) {
-        blogData = { posts: [] };
-      }
-      leagueTeamManagersData = {};
-      matchupsData = null;
-      playersData = null;
-    }
-  });
+	const nflState = getNflState();
+	const podiumsData = getAwards();
+	const leagueTeamManagersData = getLeagueTeamManagers();
 </script>
 
-<svelte:head>
-  <title>G-Vegas Gridiron Fantasy Football League</title>
-  <meta name="description" content="Official website of the G-Vegas Gridiron Fantasy Football League" />
-</svelte:head>
-
-<!-- LEAGUE PAGE -->
-  <style>
-    .pageBody {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 60px;
+<style>
+    #home {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        overflow-y: hidden;
+        z-index: 1;
     }
 
-    .homepageContent {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 30px;
-      width: 95%;
-      max-width: 1200px;
-      margin: 0 auto;
+    #main {
+        flex-grow: 1;
+        min-width: 320px;
+        margin: 0 auto;
+        padding: 60px 0;
     }
 
-    .mainContent {
-      min-width: 0; /* Allows grid item to shrink below content size */
+    .text {
+        padding: 0 30px;
+        max-width: 620px;
+        margin: 0 auto;
+        font-size: 1.4em;
+        line-height: 1.8;
     }
 
-    .sideContent {
-      min-width: 0;
+    .text p {
+        font-size: 1.3em;
+        margin-bottom: 1.5em;
     }
 
-    .homepageText {
-      width: 85%;
-      max-width: 800px;
-      line-height: 1.6;
-      margin: 0 auto 30px auto;
-      text-align: center;
+    .leagueData {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-width: 470px;
+        max-width: 470px;
+        min-height: 100%;
+		background-color: var(--ebebeb);
+        border-left: var(--eee);
+		box-shadow: inset 8px 0px 6px -6px rgb(0 0 0 / 24%);
     }
 
-    .homepageText h1,
-    .homepageText h2,
-    .homepageText h3 {
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
+    @media (max-width: 950px) {
+        .leagueData {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+		    box-shadow: none;
+        }
+        #home {
+            flex-wrap: wrap;
+        }
     }
 
-    .homepageText p {
-      margin-bottom: 1em;
+    .transactions {
+        display: block;
+        width: 95%;
+        margin: 10px auto;
     }
 
-    .loading {
-      display: block;
-      width: 85%;
-      max-width: 500px;
-      margin: 80px auto;
+    .center {
+        text-align: center;
     }
 
-    .matchupsSection {
-      background: var(--fff);
-      border-radius: 12px;
-      box-shadow: 0px 3px 3px -2px var(--boxShadowOne), 0px 3px 4px 0px var(--boxShadowTwo), 0px 1px 8px 0px var(--boxShadowThree);
-      padding: 20px;
-      margin-bottom: 20px;
+    h6 {
+        text-align: center;
     }
 
-    .matchupsSection h3 {
-      margin: 0 0 15px 0;
-      color: var(--g000);
-      text-align: center;
+    .homeBanner {
+        background-color: var(--blueOne);
+        color: #fff;
+        padding: 0.5em 0;
+        font-weight: 500;
+        font-size: 1.5em;
     }
 
-    @media (max-width: 1000px) {
-      .homepageContent {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      .sideContent {
-        order: -1; /* Show matchups above content on mobile */
-      }
+    /* champ styling */
+    #currentChamp {
+        padding: 25px 0;
+		background-color: var(--f3f3f3);
+        box-shadow: 5px 0 8px var(--champShadow);
+        border-left: 1px solid var(--ddd);
+    }
+
+    #champ {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .first {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        border: 1px solid #ccc;
+        left: 50%;
+        top: 43%;
+    }
+
+    .laurel {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 135px;
+        height: auto;
+        left: 50%;
+        top: 50%;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.8em;
+        margin: 10px;
+        font-style: italic;
+    }
+
+    .label {
+        display: table;
+        text-align: center;
+        line-height: 1.1em;
+        font-size: 1.7em;
+        margin: 6px auto 10px;
+        cursor: pointer;
+    }
+    
+	:global(.curOwner) {
+		font-size: 0.75em;
+		color: #bbb;
+		font-style: italic;
+	}
+
+    /* Background logo styling */
+    .backgroundLogo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        opacity: 0.5;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .backgroundLogo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     @media (max-width: 768px) {
-      .homepageContent {
-        width: 95%;
-      }
-      
-      .homepageText {
-        width: 100%;
-      }
+        .backgroundLogo {
+            width: 300px;
+            height: 300px;
+        }
     }
-  </style>
+</style>
 
-  <div class="pageBody">
-    <!-- League homepage text -->
-    <div class="homepageText">
-      {@html homepageText}
+<!-- Background logo -->
+<div class="backgroundLogo">
+  <img src="/badge.png" alt="G-Vegas Gridiron League Badge" />
+</div>
+
+<div id="home">
+    <div id="main">
+        <div class="text">
+            <h6>{leagueName}</h6>
+            <!-- homepageText contains the intro text for your league, this gets edited in /src/lib/utils/leagueInfo.js -->
+            {@html homepageText }
+            <!-- Most recent Blog Post (if enabled) -->
+            {#if enableBlog}
+                <HomePost />
+            {/if}
+        </div>
+        <PowerRankings />
     </div>
-
-    {#if loading}
-      <div class="loading">
-        <p>Loading league content...</p>
-        <LinearProgress indeterminate />
-      </div>
-    {:else}
-      <div class="homepageContent">
-        <!-- Main content area -->
-        <div class="mainContent">
-          <!-- News section -->
-          {#if newsData && newsData.articles && newsData.articles.length > 0}
-            <News news={newsData} />
-          {:else if newsData}
-            <div style="text-align: center; padding: 40px; color: var(--g555);">
-              <p>No news articles available at the moment.</p>
-            </div>
-          {/if}
-
-          <!-- Blog section (if enabled) -->
-          {#if enableBlog && blogData && blogData.posts && blogData.posts.length > 0}
-            <HomePost postsData={blogData} leagueTeamManagersData={leagueTeamManagersData} />
-          {/if}
+    
+    <div class="leagueData">
+        <div class="homeBanner">
+            {#await nflState}
+                <div class="center">Retrieving NFL state...</div>
+                <LinearProgress indeterminate />
+            {:then nflStateData}
+                <div class="center">NFL {nflStateData.season} 
+                    {#if nflStateData.season_type == 'pre'}
+                        Preseason
+                    {:else if nflStateData.season_type == 'post'}
+                        Postseason
+                    {:else}
+                        Season - {nflStateData.week > 0 ? `Week ${nflStateData.week}` : "Preseason"}
+                    {/if}
+                </div>
+            {:catch error}
+                <div class="center">Something went wrong: {error.message}</div>
+            {/await}
         </div>
 
-        <!-- Side content area -->
-        <div class="sideContent">
-          <!-- Current Week Matchups -->
-          {#if currentMatchups.length > 0 && players && leagueTeamManagersData && week}
-            <div class="matchupsSection">
-              <h3>Week {week} Matchups</h3>
-              {#each currentMatchups as matchup, ix}
-                <Matchup 
-                  {matchup} 
-                  {players} 
-                  displayWeek={week}
-                  active={null}
-                  {ix}
-                  leagueTeamManagers={leagueTeamManagersData}
-                  {year}
-                />
-              {/each}
-            </div>
-          {:else if week}
-            <div class="matchupsSection">
-              <h3>Week {week} Matchups</h3>
-              <p style="text-align: center; color: var(--g555); padding: 20px;">
-                Matchups loading...
-              </p>
-            </div>
-          {/if}
+        <div id="currentChamp">
+            {#await waitForAll(podiumsData, leagueTeamManagersData)}
+                <p class="center">Retrieving awards...</p>
+                <LinearProgress indeterminate />
+            {:then [podiums, leagueTeamManagers]}
+                {#if podiums[0]}
+                    <h4>{podiums[0].year} Fantasy Champ</h4>
+                    <div id="champ" role="button" tabindex="0" aria-label="View champion team" onclick={() => {if(managers.length) gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})}} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if(managers.length) gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)}); } }}> 
+                        <img src="{getAvatarFromTeamManagers(leagueTeamManagers, podiums[0].champion, podiums[0].year)}" class="first" alt="champion" />
+                        <img src="/laurel.png" class="laurel" alt="laurel" />
+                    </div>
+                    <span class="label" role="link" tabindex="0" aria-label="Go to champion manager" onclick={() => gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)}); } }}>{getTeamFromTeamManagers(leagueTeamManagers, podiums[0].champion, podiums[0].year).name}</span>
+                {:else}
+                    <p class="center">No former champs.</p>
+                {/if}
+            {:catch error}
+                <p class="center">Something went wrong: {error.message}</p>
+            {/await}
         </div>
-      </div>
-    {/if}
-  </div>
+
+        <div class="transactions" >
+            <Transactions />
+        </div>
+    </div>
+</div>
