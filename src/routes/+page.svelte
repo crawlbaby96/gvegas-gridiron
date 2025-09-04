@@ -1,49 +1,12 @@
 <script>
 	import LinearProgress from '@smui/linear-progress';
 	import { getNflState, leagueName, getAwards, getLeagueTeamManagers, homepageText, managers, gotoManager, enableBlog, waitForAll } from '$lib/utils/helper';
-	import { Transactions, PowerRankings, HomePost} from '$lib/components';
+	import { Transactions, PowerRankings, HomePost } from '$lib/components';
 	import { getAvatarFromTeamManagers, getTeamFromTeamManagers } from '$lib/utils/helperFunctions/universalFunctions';
 
-<<<<<<< Updated upstream
-  import { homepageText, getNews, enableBlog, getBlogPosts, getLeagueTeamManagers, waitForAll } from '$lib/utils/helper';
-  import { onMount } from 'svelte';
-  import News from '$lib/News/index.svelte';
-  import HomePost from '$lib/BlogPosts/HomePost.svelte';
-  import LinearProgress from '@smui/linear-progress';
-
-  // League page data
-  let newsData = null;
-  let blogData = null;
-  let leagueTeamManagersData = null;
-  let loading = true;
-
-  onMount(async () => {
-    // Load data for league page
-    const promises = [getNews(null)];
-    
-    if (enableBlog) {
-      promises.push(getBlogPosts(null));
-    }
-    
-    promises.push(getLeagueTeamManagers());
-    
-    const results = await waitForAll(...promises);
-    newsData = results[0];
-    
-    if (enableBlog) {
-      blogData = results[1];
-      leagueTeamManagersData = results[2];
-    } else {
-      leagueTeamManagersData = results[1];
-    }
-    
-    loading = false;
-  });
-=======
-    const nflState = getNflState();
-    const podiumsData = getAwards();
-    const leagueTeamManagersData = getLeagueTeamManagers();
->>>>>>> Stashed changes
+	const nflState = getNflState();
+	const podiumsData = getAwards();
+	const leagueTeamManagersData = getLeagueTeamManagers();
 </script>
 
 <style>
@@ -55,13 +18,6 @@
         z-index: 1;
     }
 
-<<<<<<< Updated upstream
-    .homepageText {
-      width: 85%;
-      margin: 0 auto;
-      max-width: 800px;
-      line-height: 1.6;
-=======
     #main {
         flex-grow: 1;
         min-width: 320px;
@@ -92,7 +48,6 @@
 		background-color: var(--ebebeb);
         border-left: var(--eee);
 		box-shadow: inset 8px 0px 6px -6px rgb(0 0 0 / 24%);
->>>>>>> Stashed changes
     }
 
     @media (max-width: 950px) {
@@ -116,9 +71,6 @@
     .center {
         text-align: center;
     }
-<<<<<<< Updated upstream
-  </style>
-=======
 
     h6 {
         text-align: center;
@@ -216,7 +168,6 @@
         }
     }
 </style>
->>>>>>> Stashed changes
 
 <!-- Background logo -->
 <div class="backgroundLogo">
@@ -236,26 +187,6 @@
         </div>
         <PowerRankings />
     </div>
-<<<<<<< Updated upstream
-
-    <!-- News section -->
-    {#if loading}
-      <div class="loading">
-        <p>Loading league content...</p>
-        <LinearProgress indeterminate />
-      </div>
-    {:else}
-      {#if newsData}
-        <News news={newsData} />
-      {/if}
-
-      <!-- Blog section (if enabled) -->
-      {#if enableBlog && blogData}
-        <HomePost postsData={blogData} leagueTeamManagersData={leagueTeamManagersData} />
-      {/if}
-    {/if}
-  </div>
-=======
     
     <div class="leagueData">
         <div class="homeBanner">
@@ -284,11 +215,11 @@
             {:then [podiums, leagueTeamManagers]}
                 {#if podiums[0]}
                     <h4>{podiums[0].year} Fantasy Champ</h4>
-                    <div id="champ" onclick={() => {if(managers.length) gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})}} >
+                    <div id="champ" role="button" tabindex="0" aria-label="View champion team" onclick={() => {if(managers.length) gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})}} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if(managers.length) gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)}); } }}> 
                         <img src="{getAvatarFromTeamManagers(leagueTeamManagers, podiums[0].champion, podiums[0].year)}" class="first" alt="champion" />
                         <img src="/laurel.png" class="laurel" alt="laurel" />
                     </div>
-                    <span class="label" onclick={() => gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})} >{getTeamFromTeamManagers(leagueTeamManagers, podiums[0].champion, podiums[0].year).name}</span>
+                    <span class="label" role="link" tabindex="0" aria-label="Go to champion manager" onclick={() => gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)})} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); gotoManager({year: podiums[0].year, leagueTeamManagers, rosterID: parseInt(podiums[0].champion)}); } }}>{getTeamFromTeamManagers(leagueTeamManagers, podiums[0].champion, podiums[0].year).name}</span>
                 {:else}
                     <p class="center">No former champs.</p>
                 {/if}
@@ -302,4 +233,3 @@
         </div>
     </div>
 </div>
->>>>>>> Stashed changes

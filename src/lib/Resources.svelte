@@ -1,6 +1,7 @@
 <script>
     import List, { Item, Graphic, Separator, Text } from '@smui/list';
 import { dynasty } from './utils/helper';
+import { podcastEmbeds } from './utils/leagueInfo';
 
     const today = new Date();
     const resources = [
@@ -135,6 +136,20 @@ import { dynasty } from './utils/helper';
         color: #888;
         text-align: center;
     }
+
+    .podcasts {
+        width: 90%;
+        max-width: 800px;
+        margin: 30px auto;
+    }
+
+    .podcasts h4 {
+        margin-bottom: 10px;
+    }
+
+    .podcast-embed {
+        margin: 20px 0;
+    }
 </style>
 
 <div class="pageBody">
@@ -184,4 +199,11 @@ import { dynasty } from './utils/helper';
         {/each}
     </List>
     <p class="disclaimer">*Some or all content is behind a paywall</p>
+
+    <div class="podcasts">
+        <h4>Podcast Episodes</h4>
+        {#each podcastEmbeds as embed}
+            <div class="podcast-embed">{@html embed}</div>
+        {/each}
+    </div>
 </div>

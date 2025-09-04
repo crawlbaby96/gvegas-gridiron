@@ -12,9 +12,12 @@ export const homepageText = `
   <p>At the helm of this league stands its most celebrated figure, legendary musician and songwriter Steve Eager, whose influence and passion have helped shape Gvegas into its official, enduring form. Known as much for his musical legacy as his love of Greenville, Eager’s involvement elevated the league into something far greater than a seasonal pastime. His leadership and vision brought a unique blend of artistry and intensity that gave Gvegas Gridiron its identity, and his presence continues to inspire every matchup played under its banner.</p>
   <p>Though more and more of our members hail from around the country, this great league is inseparable from its hometown, Greenville—a city where tradition and modernity coexist in perfect balance. With the Reedy River flowing through the heart of its emerging downtown, Greenville offers a backdrop as lively as the competition on the fantasy field. Surrounded by the natural beauty of the Blue Ridge Mountains and energized by a thriving community, the Gvegas Gridiron Fantasy Football League reflects the character of its city: bold, spirited, and always ready for the next challenge.</p>
   <p>It's a hard league to make, but a great league to be in. Welcome to the brotherhood. May you one day experience the rich joy that comes with being able to see your name on the famed Jeff Betz Memorial Trophy. </p>
-  <p> </p>
-  <p> </p>
 `;
+
+// Podcast embeds for Resources page
+export const podcastEmbeds = [
+  `<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/27nHorVZT9yFET2cF1jW8F?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+];
 
 // /Manager Info/
 /*
