@@ -149,7 +149,10 @@ import { podcastEmbeds } from './utils/leagueInfo';
 
     .podcast-embed {
         margin: 20px 0;
+        display: flex;
+        justify-content: center;
     }
+
 </style>
 
 <div class="pageBody">
