@@ -176,7 +176,7 @@ export const managers = [
         link: null,
         image: "/managers/noel-avatar.png",
       },
-      "favoritePlayer": "1234",
+      "favoritePlayer": "560",
       "valuePosition": "RB",
       "rookieOrVets": "Vets",
       "philosophy": "If you believe it, you can achieve it",
