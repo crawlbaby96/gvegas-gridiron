@@ -12,6 +12,7 @@ import {
 	polarToCartesian,
 	sliceAngle,
 	sliceCenterAngle,
+	formatSubmission,
 } from './punishmentWheel.js';
 
 describe('punishment catalog', () => {
@@ -34,6 +35,8 @@ describe('punishment catalog', () => {
 			punishments.map((p) => p.name),
 			['Daytona 500'],
 		);
+		assert.equal(punishments[0].submittedBy, 'BadNewsBabyMammas');
+		assert.equal(punishments[0].weekAdded, 1);
 	});
 });
 
@@ -50,7 +53,11 @@ describe('buildWheelSlots', () => {
 		assert.equal(filled.length, punishments.length);
 		assert.equal(open.length, WHEEL_SLOT_COUNT - punishments.length);
 		assert.equal(slots[0].name, 'Daytona 500');
+		assert.equal(slots[0].submittedBy, 'BadNewsBabyMammas');
+		assert.equal(formatSubmission(slots[0]), 'Week 1 · BadNewsBabyMammas');
 		assert.match(slots[1].name, /^TBD /);
+		assert.equal(slots[1].submittedBy, null);
+		assert.equal(formatSubmission(slots[1]), '');
 	});
 
 	it('ignores inactive punishments on the wheel', () => {
@@ -122,6 +129,17 @@ describe('svg helpers', () => {
 		const path = describeSlice(100, 100, 50, 0, sliceAngle());
 		assert.match(path, /^M 100 100 L /);
 		assert.match(path, / Z$/);
+	});
+});
+
+describe('formatSubmission', () => {
+	it('omits a label when no team has submitted', () => {
+		assert.equal(formatSubmission({}), '');
+		assert.equal(formatSubmission({ weekAdded: 2 }), '');
+	});
+
+	it('includes the team even without a week', () => {
+		assert.equal(formatSubmission({ submittedBy: 'Solo' }), 'Solo');
 	});
 });
 

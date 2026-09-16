@@ -21,6 +21,7 @@ export function buildWheelSlots(punishments, slotCount = WHEEL_SLOT_COUNT) {
 			id: `open-slot-${slotIndex + 1}`,
 			name: `TBD ${slotIndex + 1}`,
 			weekAdded: null,
+			submittedBy: null,
 			rules: TBD_RULES,
 			details: 'This slice is reserved so the wheel stays at 14 slots while punishments are added weekly.',
 			active: true,
@@ -86,6 +87,15 @@ export function labelTransform(cx, cy, radius, midAngle) {
 		rotate = midAngle + 180;
 	}
 	return { x: pos.x, y: pos.y, rotate };
+}
+
+/** e.g. "Week 1 · BadNewsBabyMammas". Empty when no team has submitted yet. */
+export function formatSubmission(punishment) {
+	if (!punishment?.submittedBy) return '';
+	if (punishment.weekAdded != null && punishment.weekAdded !== '') {
+		return `Week ${punishment.weekAdded} · ${punishment.submittedBy}`;
+	}
+	return punishment.submittedBy;
 }
 
 export const WHEEL_COLORS = [

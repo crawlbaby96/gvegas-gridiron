@@ -12,6 +12,7 @@
 		pickSpinIndex,
 		sliceAngle,
 		sliceCenterAngle,
+		formatSubmission,
 	} from '$lib/utils/punishmentWheel';
 
 	const slots = buildWheelSlots(punishments);
@@ -112,7 +113,9 @@
 	<div class="status-row">
 		<span class="status-pill">{filledCount} / {WHEEL_SLOT_COUNT} loaded</span>
 		{#if winner}
-			<span class="status-pill winner-pill">Last result: {winner.name}</span>
+			<span class="status-pill winner-pill">
+				Last result: {winner.name}{formatSubmission(winner) ? ` · ${formatSubmission(winner)}` : ''}
+			</span>
 		{/if}
 	</div>
 
@@ -138,7 +141,7 @@
 						onmouseleave={onSliceLeave}
 						tabindex="0"
 						role="button"
-						aria-label="{slot.name}. {slot.rules}"
+						aria-label="{slot.name}. {formatSubmission(slot) ? `${formatSubmission(slot)}. ` : ''}{slot.rules}"
 					>
 						<path d={slicePath(slot.slotIndex)} fill={slot.placeholder ? '#9aa6b5' : WHEEL_COLORS[slot.slotIndex]} />
 						{#if winner?.slotIndex === slot.slotIndex}
@@ -178,8 +181,8 @@
 					<div class="card-index">#{slot.slotIndex + 1}</div>
 					<h3>{slot.name}</h3>
 					<p>{slot.rules}</p>
-					{#if slot.weekAdded}
-						<span class="week-badge">Added week {slot.weekAdded}</span>
+					{#if formatSubmission(slot)}
+						<span class="week-badge">{formatSubmission(slot)}</span>
 					{:else}
 						<span class="week-badge muted">Open slot</span>
 					{/if}
@@ -194,7 +197,11 @@
 			<p>More than 14 active punishments are in the catalog. Retire one (<code>active: false</code>) or these stay off the wheel:</p>
 			<ul>
 				{#each overflow as extra}
-					<li><strong>{extra.name}</strong> — {extra.rules}</li>
+					<li>
+						<strong>{extra.name}</strong>
+						{#if formatSubmission(extra)} — {formatSubmission(extra)}{/if}
+						 — {extra.rules}
+					</li>
 				{/each}
 			</ul>
 		</section>
@@ -204,6 +211,9 @@
 {#if hovered && !spinning && !showModal}
 	<div class="popover" style="top: {hoverPos.y + 16}px; left: {hoverPos.x + 16}px;" role="tooltip">
 		<strong>{hovered.name}</strong>
+		{#if formatSubmission(hovered)}
+			<p class="submitted">{formatSubmission(hovered)}</p>
+		{/if}
 		<p>{hovered.rules}</p>
 		<span>Click for full details</span>
 	</div>
@@ -223,8 +233,8 @@
 						<span class="info-value">{selected.slotIndex + 1} of {WHEEL_SLOT_COUNT}</span>
 					</div>
 					<div class="info-row">
-						<span class="info-label">Added</span>
-						<span class="info-value">{selected.weekAdded ? `Week ${selected.weekAdded}` : 'Not yet filled'}</span>
+						<span class="info-label">Submitted</span>
+						<span class="info-value">{formatSubmission(selected) || 'Not yet filled'}</span>
 					</div>
 				</div>
 				<div class="modal-description">
@@ -512,6 +522,13 @@
 		display: block;
 		margin-bottom: 6px;
 		color: #00316b;
+	}
+
+	.popover .submitted {
+		font-weight: 600;
+		color: var(--blueOne);
+		font-size: 0.8rem;
+		margin-bottom: 8px;
 	}
 
 	.popover p {

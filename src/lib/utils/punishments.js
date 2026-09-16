@@ -7,7 +7,7 @@
  * 2. Paste it at the bottom of `punishments` (before the closing `];`).
  * 3. Fill in `id`, `name` (short — this is what appears on the wheel),
  *    `rules`, and optional `details`.
- * 4. Set `weekAdded` to the NFL week it was added.
+ * 4. Set `weekAdded` to the NFL week it was added and `submittedBy` to the team name.
  * 5. Leave `active: true`. To retire a punishment without deleting it,
  *    set `active: false` — it drops off the wheel but stays in this file.
  *
@@ -20,6 +20,7 @@
  *   id: 'kebab-case-id',
  *   name: 'Short Name',
  *   weekAdded: 3,
+ *   submittedBy: 'Team Name',
  *   rules: 'What the loser must do, timing, and any constraints.',
  *   details: 'Optional extra notes, proof required, exceptions.',
  *   active: true,
@@ -31,6 +32,7 @@ export const punishments = [
 		id: 'daytona-500',
 		name: 'Daytona 500',
 		weekAdded: 1,
+		submittedBy: 'BadNewsBabyMammas',
 		rules: 'The loser must drive around a roundabout 500 times. Each donut eaten reduces the remaining laps by 5. This cannot be done in a self-driving car.',
 		active: true,
 	},
