@@ -43,10 +43,9 @@
 		return describeSlice(cx, cy, radius, index * angle, (index + 1) * angle);
 	}
 
-	function labelFor(slot) {
-		const mid = sliceCenterAngle(slot.slotIndex);
-		return labelTransform(cx, cy, radius * 0.62, mid);
-	}
+	const labels = slots.map((slot) =>
+		labelTransform(cx, cy, radius * 0.62, sliceCenterAngle(slot.slotIndex)),
+	);
 
 	function openDetails(slot) {
 		if (spinning) return;
@@ -70,6 +69,10 @@
 
 	function onSliceLeave() {
 		hovered = null;
+	}
+
+	function overlayClick(event) {
+		if (event.target === event.currentTarget) closeModal();
 	}
 
 	function spin() {
@@ -138,11 +141,10 @@
 						{#if winner?.slotIndex === slot.slotIndex}
 							<path d={slicePath(slot.slotIndex)} fill="none" stroke="#ffd36a" stroke-width="6" />
 						{/if}
-						{@const label = labelFor(slot)}
 						<text
-							x={label.x}
-							y={label.y}
-							transform="rotate({label.rotate} {label.x} {label.y})"
+							x={labels[slot.slotIndex].x}
+							y={labels[slot.slotIndex].y}
+							transform="rotate({labels[slot.slotIndex].rotate} {labels[slot.slotIndex].x} {labels[slot.slotIndex].y})"
 							text-anchor="middle"
 							dominant-baseline="middle"
 							class="slice-label"
@@ -205,8 +207,8 @@
 {/if}
 
 {#if showModal && selected}
-	<div class="modal-overlay" onclick={closeModal} role="presentation">
-		<div class="modal-content" onclick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="punishment-title">
+	<div class="modal-overlay" onclick={overlayClick} role="presentation">
+		<div class="modal-content" role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="punishment-title">
 			<div class="modal-header">
 				<h2 id="punishment-title">{selected.name}</h2>
 				<button class="close-button" onclick={closeModal} aria-label="Close">×</button>
