@@ -54,6 +54,7 @@
     "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
     "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
     "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark",
+    "test": "node --test src/lib/utils/punishmentWheel.test.js",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. .",
     "deploy:staging": "npm run build:staging && vercel --prod",
