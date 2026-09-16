@@ -100,10 +100,13 @@
 <div class="container">
 	<div class="header">
 		<h1>Punishment Wheel</h1>
-		<p>
-			Fourteen slices. One spin. The last-place fate of Gvegas Gridiron.
-			Hover a slice or tap a card for the rules; hit Spin when it is time.
+		<p class="lede">
+			Each week of the regular season, the highest scorer submits a punishment for the wheel.
+			Council approves or denies it. At the end of the year, the wheel is set.
+			The loser spins, and whatever it lands on is eliminated. They keep spinning until one
+			punishment remains — that is the punishment.
 		</p>
+		<p class="howto">Hover a slice or tap a card for the rules. Use Spin to try the wheel.</p>
 	</div>
 
 	<div class="status-row">
@@ -258,11 +261,19 @@
 	}
 
 	.header p {
-		font-size: 1.15rem;
 		color: var(--g555);
-		max-width: 640px;
+		max-width: 720px;
 		margin: 0 auto;
-		line-height: 1.5;
+		line-height: 1.55;
+	}
+
+	.lede {
+		font-size: 1.15rem;
+		margin-bottom: 12px;
+	}
+
+	.howto {
+		font-size: 1rem;
 	}
 
 	.status-row {

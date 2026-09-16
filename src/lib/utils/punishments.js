@@ -28,21 +28,10 @@
 
 export const punishments = [
 	{
-		id: 'waffle-house',
-		name: 'Waffle House',
+		id: 'daytona-500',
+		name: 'Daytona 500',
 		weekAdded: 1,
-		rules: 'The loser must complete a Waffle House sit-down of league-approved volume and duration. Proof required (photos or video in the group chat).',
-		details:
-			'League lore: Chris Rawlings once put up 13 waffles in 11 hours. Match or exceed the spirit of that effort; the commissioner sets the exact count for the season.',
-		active: true,
-	},
-	{
-		id: 'schwauagaahany-date',
-		name: 'Cutout Date',
-		weekAdded: 2,
-		rules: 'Take a life-size cardboard cutout of a league-designated member out for a full sit-down dinner at a real restaurant. Conversation, photos, and the check are part of the bit.',
-		details:
-			'Inspired by Jose’s 2023 Soby’s date with the Schwauagaahany cutout. The commissioner names the cutout subject before the spin.',
+		rules: 'The loser must drive around a roundabout 500 times. Each donut eaten reduces the remaining laps by 5. This cannot be done in a self-driving car.',
 		active: true,
 	},
 ];

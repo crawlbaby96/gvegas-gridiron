@@ -28,6 +28,13 @@ describe('punishment catalog', () => {
 			assert.notEqual(punishment.active, false);
 		}
 	});
+
+	it('includes only Daytona 500 as a real punishment', () => {
+		assert.deepEqual(
+			punishments.map((p) => p.name),
+			['Daytona 500'],
+		);
+	});
 });
 
 describe('buildWheelSlots', () => {
@@ -42,8 +49,8 @@ describe('buildWheelSlots', () => {
 		const open = slots.filter((slot) => slot.placeholder);
 		assert.equal(filled.length, punishments.length);
 		assert.equal(open.length, WHEEL_SLOT_COUNT - punishments.length);
-		assert.equal(slots[0].name, 'Waffle House');
-		assert.match(slots[2].name, /^TBD /);
+		assert.equal(slots[0].name, 'Daytona 500');
+		assert.match(slots[1].name, /^TBD /);
 	});
 
 	it('ignores inactive punishments on the wheel', () => {
