@@ -72,6 +72,11 @@ export const tabs = [
                 dest: '/constitution',
             },
             {
+                icon: 'casino',
+                label: 'Punishment Wheel',
+                dest: '/punishment-wheel',
+            },
+            {
                 icon: 'sports_football',
                 label: 'Go to Sleeper',
                 dest: `https://sleeper.app/leagues/${leagueID}`,
