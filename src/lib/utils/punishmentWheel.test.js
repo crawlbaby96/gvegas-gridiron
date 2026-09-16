@@ -10,6 +10,8 @@ import {
 	landingRotation,
 	pickSpinIndex,
 	polarToCartesian,
+	radialLabelTextLength,
+	radialLabelTransform,
 	sliceAngle,
 	sliceCenterAngle,
 	formatSubmission,
@@ -35,7 +37,7 @@ describe('punishment catalog', () => {
 			punishments.map((p) => p.name),
 			['Daytona 500'],
 		);
-		assert.equal(punishments[0].submittedBy, 'BadNewsBabyMammas');
+		assert.equal(punishments[0].submittedBy, 'Bad News Babymamas');
 		assert.equal(punishments[0].weekAdded, 1);
 	});
 });
@@ -53,8 +55,8 @@ describe('buildWheelSlots', () => {
 		assert.equal(filled.length, punishments.length);
 		assert.equal(open.length, WHEEL_SLOT_COUNT - punishments.length);
 		assert.equal(slots[0].name, 'Daytona 500');
-		assert.equal(slots[0].submittedBy, 'BadNewsBabyMammas');
-		assert.equal(formatSubmission(slots[0]), 'Week 1 · BadNewsBabyMammas');
+		assert.equal(slots[0].submittedBy, 'Bad News Babymamas');
+		assert.equal(formatSubmission(slots[0]), 'Week 1 · Bad News Babymamas');
 		assert.match(slots[1].name, /^TBD /);
 		assert.equal(slots[1].submittedBy, null);
 		assert.equal(formatSubmission(slots[1]), '');
@@ -129,6 +131,37 @@ describe('svg helpers', () => {
 		const path = describeSlice(100, 100, 50, 0, sliceAngle());
 		assert.match(path, /^M 100 100 L /);
 		assert.match(path, / Z$/);
+	});
+});
+
+describe('radial labels', () => {
+	it('anchors right-side labels at the rim, reading toward the hub', () => {
+		const label = radialLabelTransform(260, 260, 220, 90);
+		assert.equal(label.rotate, 0);
+		assert.equal(label.x, 480);
+		assert.equal(label.y, 260);
+		assert.equal(label.anchor, 'end');
+	});
+
+	it('flips left-side labels so they stay upright', () => {
+		const label = radialLabelTransform(260, 260, 220, 270);
+		assert.equal(label.rotate, 360);
+		assert.equal(label.x, 40);
+		assert.equal(label.anchor, 'start');
+	});
+
+	it('keeps every slice label upright', () => {
+		for (let i = 0; i < 14; i++) {
+			const { rotate } = radialLabelTransform(260, 260, 220, sliceCenterAngle(i));
+			const upright = ((rotate % 360) + 360) % 360;
+			assert.ok(upright <= 90 || upright >= 270, `slice ${i} rotate ${upright}`);
+		}
+	});
+
+	it('compresses only labels that would run past the hub', () => {
+		assert.equal(radialLabelTextLength('TBD 3', 160), null);
+		assert.equal(radialLabelTextLength('Daytona 500', 160), null);
+		assert.equal(radialLabelTextLength('A Punishment With A Very Long Name', 160), 160);
 	});
 });
 

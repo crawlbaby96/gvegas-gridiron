@@ -32,7 +32,7 @@ export const punishments = [
 		id: 'daytona-500',
 		name: 'Daytona 500',
 		weekAdded: 1,
-		submittedBy: 'BadNewsBabyMammas',
+		submittedBy: 'Bad News Babymamas',
 		rules: 'The loser must drive around a roundabout 500 times. Each donut eaten reduces the remaining laps by 5. This cannot be done in a self-driving car.',
 		active: true,
 	},

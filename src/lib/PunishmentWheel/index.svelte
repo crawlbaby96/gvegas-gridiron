@@ -7,9 +7,10 @@
 		buildWheelSlots,
 		describeSlice,
 		getOverflowPunishments,
-		labelTransform,
 		landingRotation,
 		pickSpinIndex,
+		radialLabelTextLength,
+		radialLabelTransform,
 		sliceAngle,
 		sliceCenterAngle,
 		formatSubmission,
@@ -24,6 +25,7 @@
 	const cx = size / 2;
 	const cy = size / 2;
 	const radius = 238;
+	const hubRadius = 58;
 
 	let rotation = $state(0);
 	let spinning = $state(false);
@@ -44,9 +46,13 @@
 		return describeSlice(cx, cy, radius, index * angle, (index + 1) * angle);
 	}
 
-	const labels = slots.map((slot) =>
-		labelTransform(cx, cy, radius * 0.62, sliceCenterAngle(slot.slotIndex)),
-	);
+	const labelOuterRadius = radius - 16;
+	const labelSpan = labelOuterRadius - hubRadius - 12;
+
+	const labels = slots.map((slot) => ({
+		...radialLabelTransform(cx, cy, labelOuterRadius, sliceCenterAngle(slot.slotIndex)),
+		textLength: radialLabelTextLength(slot.name, labelSpan),
+	}));
 
 	function openDetails(slot) {
 		if (spinning) return;
@@ -150,16 +156,18 @@
 						<text
 							x={labels[slot.slotIndex].x}
 							y={labels[slot.slotIndex].y}
-							transform="rotate({labels[slot.slotIndex].rotate} {labels[slot.slotIndex].x} {labels[slot.slotIndex].y})"
-							text-anchor="middle"
+							transform="rotate({labels[slot.slotIndex].rotate} {cx} {cy})"
+							text-anchor={labels[slot.slotIndex].anchor}
 							dominant-baseline="middle"
+							textLength={labels[slot.slotIndex].textLength}
+							lengthAdjust="spacingAndGlyphs"
 							class="slice-label"
 						>
 							{slot.name}
 						</text>
 					</g>
 				{/each}
-				<circle cx={cx} cy={cy} r="58" fill="var(--fff)" stroke="#00316b" stroke-width="6" />
+				<circle cx={cx} cy={cy} r={hubRadius} fill="var(--fff)" stroke="#00316b" stroke-width="6" />
 				<text x={cx} y={cy - 6} text-anchor="middle" class="hub-title">G-VEGAS</text>
 				<text x={cx} y={cy + 16} text-anchor="middle" class="hub-sub">SPIN</text>
 			</svg>
@@ -361,7 +369,7 @@
 
 	.slice-label {
 		fill: #fff;
-		font-size: 13px;
+		font-size: 15px;
 		font-weight: 700;
 		pointer-events: none;
 		text-transform: uppercase;
@@ -638,7 +646,7 @@
 		}
 
 		.slice-label {
-			font-size: 11px;
+			font-size: 13px;
 		}
 	}
 </style>

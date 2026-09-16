@@ -80,16 +80,28 @@ export function describeSlice(cx, cy, radius, startAngle, endAngle) {
 	return `M ${cx} ${cy} L ${end.x} ${end.y} A ${radius} ${radius} 0 ${largeArc} 1 ${start.x} ${start.y} Z`;
 }
 
-export function labelTransform(cx, cy, radius, midAngle) {
-	const pos = polarToCartesian(cx, cy, radius, midAngle);
-	let rotate = midAngle;
-	if (midAngle > 90 && midAngle < 270) {
-		rotate = midAngle + 180;
-	}
-	return { x: pos.x, y: pos.y, rotate };
+/**
+ * Label placement that runs along a slice's radius (rim toward hub) instead of
+ * horizontally, so long punishment names get the full depth of the slice.
+ * The returned x/y are pre-rotation coordinates; apply `rotate` about the wheel center.
+ */
+export function radialLabelTransform(cx, cy, outerRadius, midAngle) {
+	const flipped = midAngle >= 180;
+	return {
+		x: flipped ? cx - outerRadius : cx + outerRadius,
+		y: cy,
+		rotate: flipped ? midAngle + 90 : midAngle - 90,
+		anchor: flipped ? 'start' : 'end',
+	};
 }
 
-/** e.g. "Week 1 · BadNewsBabyMammas". Empty when no team has submitted yet. */
+/** Compress a label to `span` px only when it would otherwise run past the hub. */
+export function radialLabelTextLength(name, span, approxCharWidth = 8.2) {
+	const estimated = (name?.length || 0) * approxCharWidth;
+	return estimated > span ? span : null;
+}
+
+/** e.g. "Week 1 · Bad News Babymamas". Empty when no team has submitted yet. */
 export function formatSubmission(punishment) {
 	if (!punishment?.submittedBy) return '';
 	if (punishment.weekAdded != null && punishment.weekAdded !== '') {
