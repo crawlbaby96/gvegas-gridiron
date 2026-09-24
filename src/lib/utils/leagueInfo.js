@@ -1,6 +1,6 @@
 
 /*   STEP 1   */
-export const leagueID = "1185988161254850560"; // your league ID- this needs to be updated yearly new ID
+export const leagueID = "1314307964739264512"; // 2026 Gvegas Gridiron; update yearly (previous: 1185988161254850560)
 export const leagueName = "Gvegas Gridiron"; // your league name
 export const dues = 12; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
