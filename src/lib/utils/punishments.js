@@ -36,4 +36,39 @@ export const punishments = [
 		rules: 'The loser must drive around a roundabout 500 times. Each donut eaten reduces the remaining laps by 5. This cannot be done in a self-driving car.',
 		active: true,
 	},
+	// The next three were named in the 10/6/2026 severity note and were not in
+	// the catalog. Rules are only the concrete details from that note. Full
+	// writeups were not in the repo or its history. No week or submitter was recorded.
+	{
+		id: 'strawberry-shortcake',
+		name: 'Strawberry Shortcake',
+		rules: 'The GoPro requirement has been removed. The punishment includes visiting the Pace household.',
+		details:
+			'Severity note posted 10/6/2026 by North Korean Fighting Kims: the chances of arrest are lower since we removed the GoPro requirement, but Chris Hansen and Alex Rosen are lurking around the corner. Visiting the Pace household is the cherry on top!',
+		active: true,
+	},
+	{
+		id: 'back-to-school',
+		name: 'Back to School',
+		rules: 'The loser must spend a full Saturday that cannot be manipulated, starting at 8AM, including at least two academic tests, reading the essay of shame on draft weekend, and YouTube uploads.',
+		details:
+			"Severity note posted 10/6/2026 by North Korean Fighting Kims: the lack of getting arrested danger narrowly puts this behind the Daytona 500, but this is a full day of misery that can't be manipulated. From the 8AM start time, at least two academic tests, reading the essay of shame on draft weekend, and YouTube uploads of your misery, this is a wasted Saturday and a migrane inducing nightmare",
+		active: true,
+	},
+	{
+		id: 'stay-of-execution',
+		name: 'Stay of Execution',
+		rules: 'The loser must hold a plank for approximately 7-14 minutes straight, with a burpee penalty.',
+		details:
+			'Severity note posted 10/6/2026 by North Korean Fighting Kims: holding a plank for approximately 7-14 minutes straight with a burpee penalty is unpleasant, but the name "Stay of Execution" implies that this is designed to be less severe than the other punishments',
+		active: true,
+	},
+	{
+		id: 'solo-flash-mob',
+		name: 'Solo Flash Mob (The Internet Record Edition)',
+		submittedBy: 'Bull City Bots',
+		rules: 'The loser will head to a packed public area, turn a portable Bluetooth speaker to maximum volume, and perform a high-energy, fully choreographed full-song routine lasting at least 4 minutes to a highly embarrassing track chosen by the league—all without breaking character or explaining the stunt to the bewildered crowd. Two league members will film the performance and the raw reactions of onlookers from a distance. The unedited footage will then be uploaded as a public YouTube video and pinned across all the loser’s personal social media profiles, where it must remain completely active and public for 365 consecutive days, enforced by severe draft penalties if removed early.',
+		details: 'Song choice must be chosen / approved by league council.',
+		active: true,
+	},
 ];
