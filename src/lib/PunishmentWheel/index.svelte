@@ -65,13 +65,28 @@
 		selected = null;
 	}
 
+	function placeHover(event) {
+		const margin = 12;
+		const width = 320;
+		const height = 240;
+		let x = event.clientX + 16;
+		let y = event.clientY + 16;
+		if (x + width > window.innerWidth - margin) {
+			x = Math.max(margin, event.clientX - width - 16);
+		}
+		if (y + height > window.innerHeight - margin) {
+			y = Math.max(margin, event.clientY - height - 16);
+		}
+		hoverPos = { x, y };
+	}
+
 	function onSliceEnter(event, slot) {
 		hovered = slot;
-		hoverPos = { x: event.clientX, y: event.clientY };
+		placeHover(event);
 	}
 
 	function onSliceMove(event) {
-		hoverPos = { x: event.clientX, y: event.clientY };
+		placeHover(event);
 	}
 
 	function onSliceLeave() {
@@ -191,7 +206,7 @@
 					<p>{slot.rules}</p>
 					{#if formatSubmission(slot)}
 						<span class="week-badge">{formatSubmission(slot)}</span>
-					{:else}
+					{:else if slot.placeholder}
 						<span class="week-badge muted">Open slot</span>
 					{/if}
 				</button>
@@ -217,7 +232,7 @@
 </div>
 
 {#if hovered && !spinning && !showModal}
-	<div class="popover" style="top: {hoverPos.y + 16}px; left: {hoverPos.x + 16}px;" role="tooltip">
+	<div class="popover" style="top: {hoverPos.y}px; left: {hoverPos.x}px;" role="tooltip">
 		<strong>{hovered.name}</strong>
 		{#if formatSubmission(hovered)}
 			<p class="submitted">{formatSubmission(hovered)}</p>
@@ -467,6 +482,7 @@
 		margin: 0 0 8px;
 		font-size: 1.15rem;
 		color: var(--g000);
+		overflow-wrap: anywhere;
 	}
 
 	.punishment-card p {
@@ -477,6 +493,7 @@
 		-webkit-line-clamp: 4;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+		overflow-wrap: break-word;
 	}
 
 	.card-index {
@@ -516,7 +533,7 @@
 	.popover {
 		position: fixed;
 		z-index: 20;
-		max-width: 280px;
+		max-width: min(320px, calc(100vw - 24px));
 		background: var(--fff);
 		color: var(--g000);
 		border: 1px solid #00316b;
@@ -544,6 +561,11 @@
 		font-size: 0.9rem;
 		color: var(--g555);
 		line-height: 1.4;
+		overflow-wrap: break-word;
+		display: -webkit-box;
+		-webkit-line-clamp: 8;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	.popover span {
@@ -571,7 +593,8 @@
 		border-radius: 12px;
 		max-width: 640px;
 		width: 100%;
-		max-height: 90vh;
+		max-height: min(90vh, calc(100vh - 24px));
+		overflow-x: hidden;
 		overflow-y: auto;
 		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 	}
@@ -579,7 +602,8 @@
 	.modal-header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
+		gap: 12px;
 		padding: 20px 30px;
 		border-bottom: 1px solid var(--ddd);
 	}
@@ -587,6 +611,9 @@
 	.modal-header h2 {
 		margin: 0;
 		color: var(--g000);
+		min-width: 0;
+		line-height: 1.3;
+		overflow-wrap: anywhere;
 	}
 
 	.close-button {
@@ -596,6 +623,8 @@
 		cursor: pointer;
 		color: var(--g555);
 		padding: 5px;
+		flex-shrink: 0;
+		line-height: 1;
 	}
 
 	.close-button:hover {
@@ -638,6 +667,8 @@
 		margin: 0 0 16px;
 		color: var(--g555);
 		line-height: 1.55;
+		overflow-wrap: break-word;
+		white-space: normal;
 	}
 
 	@media (max-width: 640px) {
@@ -647,6 +678,20 @@
 
 		.slice-label {
 			font-size: 13px;
+		}
+
+		.modal-overlay {
+			padding: 12px;
+			align-items: flex-start;
+		}
+
+		.modal-header,
+		.modal-body {
+			padding: 16px 18px;
+		}
+
+		.modal-content {
+			max-height: calc(100vh - 24px);
 		}
 	}
 </style>

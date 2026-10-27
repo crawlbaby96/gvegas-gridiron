@@ -32,13 +32,38 @@ describe('punishment catalog', () => {
 		}
 	});
 
-	it('includes only Daytona 500 as a real punishment', () => {
+	it('keeps Daytona 500 and appends the added punishments', () => {
 		assert.deepEqual(
 			punishments.map((p) => p.name),
-			['Daytona 500'],
+			[
+				'Daytona 500',
+				'Strawberry Shortcake',
+				'Back to School',
+				'Stay of Execution',
+				'Solo Flash Mob (The Internet Record Edition)',
+			],
 		);
 		assert.equal(punishments[0].submittedBy, 'Bad News Babymamas');
 		assert.equal(punishments[0].weekAdded, 1);
+		assert.equal(
+			punishments[0].rules,
+			'The loser must drive around a roundabout 500 times. Each donut eaten reduces the remaining laps by 5. This cannot be done in a self-driving car.',
+		);
+
+		for (const id of ['strawberry-shortcake', 'back-to-school', 'stay-of-execution']) {
+			const punishment = punishments.find((entry) => entry.id === id);
+			assert.equal(punishment.submittedBy, undefined);
+			assert.equal(punishment.weekAdded, undefined);
+			assert.equal(punishment.active, true);
+			assert.ok(punishment.details);
+		}
+
+		const flash = punishments.find((entry) => entry.id === 'solo-flash-mob');
+		assert.equal(flash.submittedBy, 'Bull City Bots');
+		assert.equal(flash.weekAdded, undefined);
+		assert.equal(flash.details, 'Song choice must be chosen / approved by league council.');
+		assert.match(flash.rules, /Bluetooth speaker/);
+		assert.match(flash.rules, /365 consecutive days/);
 	});
 });
 
@@ -57,9 +82,12 @@ describe('buildWheelSlots', () => {
 		assert.equal(slots[0].name, 'Daytona 500');
 		assert.equal(slots[0].submittedBy, 'Bad News Babymamas');
 		assert.equal(formatSubmission(slots[0]), 'Week 1 · Bad News Babymamas');
-		assert.match(slots[1].name, /^TBD /);
-		assert.equal(slots[1].submittedBy, null);
-		assert.equal(formatSubmission(slots[1]), '');
+		assert.equal(slots[4].name, 'Solo Flash Mob (The Internet Record Edition)');
+		assert.equal(slots[4].placeholder, false);
+		assert.equal(formatSubmission(slots[4]), 'Bull City Bots');
+		assert.match(slots[5].name, /^TBD /);
+		assert.equal(slots[5].submittedBy, null);
+		assert.equal(formatSubmission(slots[5]), '');
 	});
 
 	it('ignores inactive punishments on the wheel', () => {
