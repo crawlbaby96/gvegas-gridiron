@@ -41,6 +41,7 @@ describe('punishment catalog', () => {
 				'Back to School',
 				'Stay of Execution',
 				'Solo Flash Mob (The Internet Record Edition)',
+				'Half Marathon',
 			],
 		);
 		assert.equal(punishments[0].submittedBy, 'Bad News Babymamas');
@@ -64,6 +65,17 @@ describe('punishment catalog', () => {
 		assert.equal(flash.details, 'Song choice must be chosen / approved by league council.');
 		assert.match(flash.rules, /Bluetooth speaker/);
 		assert.match(flash.rules, /365 consecutive days/);
+
+		const marathon = punishments.find((entry) => entry.id === 'half-marathon');
+		assert.equal(marathon.name, 'Half Marathon');
+		assert.equal(marathon.submittedBy, 'The Golden Reaper');
+		assert.equal(marathon.weekAdded, undefined);
+		assert.equal(marathon.details, undefined);
+		assert.equal(marathon.active, true);
+		assert.equal(
+			marathon.rules,
+			'The loser must run a half marathon before the next draft weekend.',
+		);
 	});
 });
 
@@ -85,9 +97,12 @@ describe('buildWheelSlots', () => {
 		assert.equal(slots[4].name, 'Solo Flash Mob (The Internet Record Edition)');
 		assert.equal(slots[4].placeholder, false);
 		assert.equal(formatSubmission(slots[4]), 'Bull City Bots');
-		assert.match(slots[5].name, /^TBD /);
-		assert.equal(slots[5].submittedBy, null);
-		assert.equal(formatSubmission(slots[5]), '');
+		assert.equal(slots[5].name, 'Half Marathon');
+		assert.equal(slots[5].placeholder, false);
+		assert.equal(formatSubmission(slots[5]), 'The Golden Reaper');
+		assert.match(slots[6].name, /^TBD /);
+		assert.equal(slots[6].submittedBy, null);
+		assert.equal(formatSubmission(slots[6]), '');
 	});
 
 	it('ignores inactive punishments on the wheel', () => {
