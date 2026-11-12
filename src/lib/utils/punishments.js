@@ -71,4 +71,11 @@ export const punishments = [
 		details: 'Song choice must be chosen / approved by league council.',
 		active: true,
 	},
+	{
+		id: 'half-marathon',
+		name: 'Half Marathon',
+		submittedBy: 'The Golden Reaper',
+		rules: 'The loser must run a half marathon before the next draft weekend.',
+		active: true,
+	},
 ];
